@@ -8,7 +8,7 @@
   <!-- SEO basics -->
   <meta name="description" content="Meregrupi Allvee Akadeemia – ujumise algõpetus, vabasukeldumine, merineitsid, allveevõitlus, allveeskuutrid, MGVS militaarprogramm, koolitused (vetelpääste, apnoe stressitaluvus) ning allveefoto & film." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#1b212f" />
+  <meta name="theme-color" content="#e7f1ff" />
   <meta name="author" content="Meregrupp Allvee Akadeemia" />
 
   <!-- Open Graph / Social -->
@@ -53,36 +53,35 @@
 
   <style>
     :root {
-      color-scheme: dark;
+            color-scheme: light;
 
-      /* 10% heledamaks (sinised taustad) */
-      --bg: #1b212f;         /* oli #020818 */
-      --bg-alt: #1e2738;     /* oli #050f22 */
+      --bg: #f9fcff;
+      --bg-alt: #f2f7ff;
 
-      --bg-grad-mid: #1c2b3e;  /* oli #031329 */
-      --bg-grad-end: #1a313e;  /* oli #001a29 */
+      --bg-grad-mid: #f2f8ff;
+      --bg-grad-end: #eaf2ff;
 
-      --bg-hero: radial-gradient(circle at 10% 0, #204f75 0, transparent 40%),
-                  radial-gradient(circle at 90% 80%, #1a4f60 0, transparent 40%),
+      --bg-hero: radial-gradient(circle at 10% 0, rgba(122, 186, 255, 0.35) 0, transparent 45%),
+                  radial-gradient(circle at 90% 80%, rgba(91, 163, 255, 0.3) 0, transparent 45%),
                   var(--bg);
 
-      --card-bg: rgba(6, 18, 46, 0.95);
-      --card-bg-soft: rgba(5, 18, 40, 0.9);
-      --accent: #00d4ff;
-      --accent-strong: #3fffe0;
-      --accent-soft: rgba(0, 212, 255, 0.16);
-      --accent-soft-2: rgba(63, 255, 224, 0.11);
-      --danger: #ff4f7a;
-      --text-main: #f5fbff;
-      --text-muted: #9bb3c9;
-      --border-subtle: rgba(126, 160, 210, 0.18);
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --card-bg-soft: rgba(246, 251, 255, 0.94);
+      --accent: #2a6bff;
+      --accent-strong: #4cc3ff;
+      --accent-soft: rgba(42, 107, 255, 0.14);
+      --accent-soft-2: rgba(76, 195, 255, 0.12);
+      --danger: #d9336c;
+      --text-main: #0b1422;
+      --text-muted: #1f2d3d;
+      --border-subtle: rgba(65, 120, 180, 0.22);
 
       --radius-lg: 24px;
       --radius-md: 16px;
       --radius-pill: 999px;
 
-      --shadow-soft: 0 22px 55px rgba(0, 0, 0, 0.5);
-      --shadow-small: 0 10px 30px rgba(0, 0, 0, 0.45);
+       --shadow-soft: 0 22px 55px rgba(28, 66, 110, 0.16);
+      --shadow-small: 0 10px 30px rgba(28, 66, 110, 0.12);
 
       --nav-height: 74px;
       --content-max: 1120px;
@@ -102,25 +101,25 @@
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
+     body::before {
+     content: "";
       position: fixed;
       inset: -20vh -20vw;
       background:
-        radial-gradient(circle at 15% 15%, rgba(0, 212, 255, 0.12), transparent 55%),
-        radial-gradient(circle at 85% 80%, rgba(63, 255, 224, 0.10), transparent 55%);
+        radial-gradient(circle at 15% 15%, rgba(76, 195, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(42, 107, 255, 0.16), transparent 55%);
       opacity: 0.75;
       pointer-events: none;
       z-index: -2;
     }
 
-    body::after {
+     body::after {
       content: "";
       position: fixed;
       inset: 0;
       background-image:
-        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.07), transparent 55%),
-        radial-gradient(circle at 90% 40%, rgba(255, 255, 255, 0.04), transparent 55%);
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.55), transparent 55%),
+        radial-gradient(circle at 90% 40%, rgba(255, 255, 255, 0.35), transparent 55%);
       mix-blend-mode: soft-light;
       opacity: 0.16;
       pointer-events: none;
@@ -137,8 +136,8 @@
       top: 12px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(130, 203, 255, 0.5);
+      background: #2a6bff;
+      border: 1px solid rgba(42, 107, 255, 0.4);
       color: #fff;
       z-index: 1000;
     }
@@ -154,9 +153,9 @@
     }
 
     .section-alt {
-      background: radial-gradient(circle at 0 0, rgba(0, 212, 255, 0.07), transparent 60%),
-                  radial-gradient(circle at 100% 100%, rgba(63, 255, 224, 0.07), transparent 60%),
-                  linear-gradient(135deg, #1b212d 0%, #1b2736 100%); /* oli #020816 / #020f20 */
+      background: radial-gradient(circle at 0 0, rgba(42, 107, 255, 0.09), transparent 60%),
+                  radial-gradient(circle at 100% 100%, rgba(76, 195, 255, 0.1), transparent 60%),
+                  linear-gradient(135deg, #f1f7ff 0%, #e9f2ff 100%);
     }
 
     .section-inner {
@@ -175,7 +174,8 @@
       background-size: cover;
       background-position: center;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(42, 107, 255, 0.15);
+      background-color: #eef6ff;
       min-height: 260px;
     }
 
@@ -183,7 +183,7 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.15), transparent 65%),
-                  linear-gradient(130deg, rgba(0, 0, 0, 0.4), transparent 50%);
+                  linear-gradient(130deg, rgba(42, 72, 112, 0.25), transparent 50%);
       mix-blend-mode: soft-light;
       pointer-events: none;
     }
@@ -194,8 +194,8 @@
       left: 18px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(3, 12, 34, 0.86);
-      border: 1px solid rgba(134, 210, 255, 0.4);
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(74, 140, 220, 0.35);
       backdrop-filter: blur(16px);
       display: inline-flex;
       align-items: center;
@@ -208,7 +208,7 @@
       height: 8px;
       border-radius: 999px;
       background: var(--accent-strong);
-      box-shadow: 0 0 12px rgba(63, 255, 224, 0.9);
+      box-shadow: 0 0 12px rgba(76, 195, 255, 0.6);
     }
 
     .section-media-tagline {
@@ -218,7 +218,7 @@
       color: var(--text-muted);
     }
 
-    .section-media-pill-strong { font-weight: 600; color: #e6f9ff; }
+    .section-media-pill-strong { font-weight: 600; color: var(--text-main); }
 
     .section-copy { position: relative; z-index: 1; }
 
@@ -266,21 +266,21 @@
       position: absolute;
       left: 0;
       top: 7px;
-      box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.12);
+      box-shadow: 0 0 0 4px rgba(42, 107, 255, 0.12);
     }
 
     .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 
-    .badge {
+   .badge {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       padding: 6px 12px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(130, 209, 255, 0.28);
-      background: radial-gradient(circle at 0 0, rgba(0, 212, 255, 0.15), transparent 60%),
-                  rgba(1, 13, 34, 0.92);
-      color: var(--text-muted);
+      border: 1px solid rgba(74, 140, 220, 0.35);
+      background: radial-gradient(circle at 0 0, rgba(42, 107, 255, 0.12), transparent 60%),
+                  rgba(255, 255, 255, 0.86);
+      color: var(--text-main);
     }
 
     /* Navigation */
@@ -306,19 +306,19 @@
       align-items: center;
       justify-content: space-between;
       border-radius: var(--radius-pill);
-      background: rgba(8, 20, 50, 0.84); /* heledam */
-      border: 1px solid rgba(75, 126, 192, 0.45);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(150, 190, 230, 0.6);
       backdrop-filter: blur(22px);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 18px 45px rgba(28, 66, 110, 0.12);
       transform: translateY(8px);
       transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .nav.scrolled .nav-inner {
-      background: rgba(8, 18, 42, 0.96); /* heledam */
-      border-color: rgba(46, 90, 160, 0.8);
+   .nav.scrolled .nav-inner {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(122, 166, 215, 0.7);
       transform: translateY(0);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 12px 35px rgba(28, 66, 110, 0.16);
     }
 
     .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
@@ -329,8 +329,8 @@
       border-radius: 10px;
       background:
         radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.8), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(0, 212, 255, 0.9), transparent 65%),
-        linear-gradient(135deg, #1a2935, #1a6885); /* heledam */
+        radial-gradient(circle at 70% 80%, rgba(76, 195, 255, 0.9), transparent 65%),
+        linear-gradient(135deg, #cfe6ff, #74b9ff);
       position: relative;
       overflow: hidden;
     }
@@ -401,25 +401,32 @@
       white-space: nowrap;
     }
 
-    .btn-primary {
+   .btn-primary {
       background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.2), transparent 65%),
-                  linear-gradient(135deg, #00d4ff, #3fffe0);
-      color: #020818;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+                  linear-gradient(135deg, #2a6bff, #4cc3ff);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(28, 66, 110, 0.2);
     }
 
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 38px rgba(28, 66, 110, 0.26); }
 
     .btn-outline {
-      border-color: rgba(116, 188, 246, 0.6);
-      background: radial-gradient(circle at 0 0, rgba(0, 212, 255, 0.2), transparent 60%),
-                  rgba(6, 18, 46, 0.92); /* veidi heledam */
+      border-color: rgba(74, 140, 220, 0.6);
+      background: radial-gradient(circle at 0 0, rgba(42, 107, 255, 0.12), transparent 60%),
+                  rgba(255, 255, 255, 0.9);
       color: var(--text-main);
     }
 
+    .section-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
     .btn-outline:hover {
-      background: radial-gradient(circle at 100% 100%, rgba(63, 255, 224, 0.25), transparent 60%),
-                  rgba(6, 18, 46, 0.98);
+      background: radial-gradient(circle at 100% 100%, rgba(76, 195, 255, 0.18), transparent 60%),
+                  rgba(255, 255, 255, 0.98);
       transform: translateY(-1px);
     }
 
@@ -429,8 +436,8 @@
       display: inline-flex;
       padding: 3px;
       border-radius: 999px;
-      border: 1px solid rgba(103, 161, 220, 0.58);
-      background: rgba(6, 18, 46, 0.92);
+      border: 1px solid rgba(122, 166, 215, 0.6);
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .lang-switch button {
@@ -446,7 +453,7 @@
       transition: background 0.18s ease, color 0.18s ease;
     }
 
-    .lang-switch button.is-active { background: linear-gradient(135deg, #00d4ff, #3fffe0); color: #020818; }
+   .lang-switch button.is-active { background: linear-gradient(135deg, #2a6bff, #4cc3ff); color: #fff; }
 
     .nav-toggle {
       display: none;
@@ -454,7 +461,7 @@
       height: 34px;
       border-radius: 999px;
       border: 1px solid rgba(109, 171, 230, 0.7);
-      background: rgba(6, 18, 46, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -465,7 +472,7 @@
       width: 18px;
       height: 2px;
       border-radius: 999px;
-      background: #e9f5ff;
+      background: #1b2a3b;
       position: relative;
     }
 
@@ -477,7 +484,7 @@
       width: 18px;
       height: 2px;
       border-radius: 999px;
-      background: #e9f5ff;
+      background: #1b2a3b;
       transition: transform 0.18s ease, top 0.18s ease, opacity 0.18s ease;
     }
 
@@ -532,8 +539,8 @@
 
     .hero-title { font-size: clamp(34px, 4vw, 44px); line-height: 1.05; margin-bottom: 14px; }
 
-    .hero-highlight {
-      background: linear-gradient(135deg, #00f0ff, #3fffe0);
+   .hero-highlight {
+      background: linear-gradient(135deg, #2a6bff, #4cc3ff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -550,7 +557,7 @@
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
 
     .hero-meta { display: flex; flex-wrap: wrap; gap: 18px; font-size: 12px; color: var(--text-muted); }
-    .hero-meta-item strong { color: #e8f6ff; font-weight: 600; }
+    .hero-meta-item strong { color: var(--text-main); font-weight: 600; }
 
     .hero-scene { position: relative; min-height: 280px; }
 
@@ -558,9 +565,9 @@
       position: relative;
       border-radius: 28px;
       background:
-        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.27), transparent 60%),
-        radial-gradient(circle at 0 80%, rgba(63, 255, 224, 0.27), transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.6), transparent 65%),
+        radial-gradient(circle at 80% 20%, rgba(42, 107, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 0 80%, rgba(76, 195, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45), transparent 65%),
         var(--bg);
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(130, 203, 255, 0.4);
@@ -586,8 +593,8 @@
     .hero-panel-badge {
       padding: 6px 10px;
       border-radius: var(--radius-pill);
-      background: rgba(8, 20, 50, 0.95);
-      border: 1px solid rgba(134, 210, 255, 0.55);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(130, 180, 230, 0.6);
       font-size: 11px;
       display: inline-flex;
       align-items: center;
@@ -599,7 +606,7 @@
       height: 9px;
       border-radius: 999px;
       background: var(--accent-strong);
-      box-shadow: 0 0 14px rgba(63, 255, 224, 0.9);
+      box-shadow: 0 0 14px rgba(76, 195, 255, 0.7);
     }
 
     .hero-panel-visual {
@@ -617,7 +624,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(8, 20, 50, 0.5), transparent 40%, rgba(1, 6, 20, 0.9));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 40%, rgba(42, 72, 112, 0.35));
       mix-blend-mode: soft-light;
     }
 
@@ -627,8 +634,8 @@
       bottom: 14px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(0, 11, 30, 0.9);
-      border: 1px solid rgba(130, 203, 255, 0.7);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(130, 180, 230, 0.6);
       font-size: 11px;
       display: inline-flex;
       align-items: center;
@@ -641,18 +648,18 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9), transparent 70%),
-                  linear-gradient(135deg, #00d4ff, #3fffe0);
+     background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9), transparent 70%),
+                  linear-gradient(135deg, #2a6bff, #4cc3ff);
     }
 
     .hero-bubbles { position: absolute; inset: -10% -10%; pointer-events: none; opacity: 0.9; }
 
-    .bubble {
+   .bubble {
       position: absolute;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), transparent 65%);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-      opacity: 0.3;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(76, 195, 255, 0.35) 45%, transparent 70%);
+      box-shadow: 0 0 36px rgba(42, 107, 255, 0.25);
+      opacity: 0.65;
       animation: floatUp 16s linear infinite;
     }
 
@@ -675,13 +682,13 @@
       margin-top: 24px;
     }
 
-    .program-card {
+   .program-card {
       position: relative;
       border-radius: var(--radius-md);
       padding: 18px 18px 16px;
       background:
-        radial-gradient(circle at 0 0, rgba(0, 212, 255, 0.12), transparent 60%),
-        radial-gradient(circle at 100% 100%, rgba(63, 255, 224, 0.12), transparent 60%),
+        radial-gradient(circle at 0 0, rgba(42, 107, 255, 0.12), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(76, 195, 255, 0.12), transparent 60%),
         var(--card-bg);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-small);
@@ -705,7 +712,7 @@
 
     .program-meta { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11px; color: var(--text-muted); }
 
-    .chip { padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(130, 209, 255, 0.45); background: rgba(2, 10, 30, 0.95); }
+    .chip { padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(130, 209, 255, 0.45); background: rgba(255, 255, 255, 0.9); }
 
     /* Instructors */
     .instructor-grid {
@@ -727,10 +734,10 @@
       position: relative;
       min-height: 190px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.14), transparent 60%),
-        linear-gradient(135deg, rgba(10, 30, 66, 0.9), rgba(4, 12, 30, 0.9));
-      border-bottom: 1px solid rgba(180, 230, 255, 0.18);
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.7), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(76, 195, 255, 0.2), transparent 60%),
+        linear-gradient(135deg, rgba(230, 244, 255, 0.9), rgba(214, 235, 255, 0.9));
+      border-bottom: 1px solid rgba(180, 230, 255, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -742,11 +749,11 @@
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(245, 251, 255, 0.82);
-      border: 1px dashed rgba(130, 203, 255, 0.55);
+      color: rgba(11, 20, 34, 0.72);
+      border: 1px dashed rgba(130, 180, 230, 0.7);
       padding: 10px 12px;
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.18);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .instructor-body { padding: 16px 16px 18px; }
@@ -755,7 +762,7 @@
     .instructor-text { font-size: 13px; line-height: 1.7; color: var(--text-muted); }
 
     .instructor-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .instructor-tag { font-size: 11px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(130, 209, 255, 0.35); background: rgba(2, 10, 30, 0.85); color: var(--text-muted); }
+   .instructor-tag { font-size: 11px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(130, 209, 255, 0.35); background: rgba(255, 255, 255, 0.9); color: var(--text-muted); }
 
     /* Contact form */
     .contact-grid {
@@ -778,10 +785,10 @@
     .field { display: grid; gap: 6px; font-size: 13px; }
     .field label { color: var(--text-muted); }
 
-    .field input,
+   .field input,
     .field textarea,
     .field select {
-      background: rgba(1, 7, 22, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
       border: 1px solid rgba(103, 167, 226, 0.5);
       padding: 9px 11px;
@@ -793,7 +800,7 @@
 
     .field textarea { min-height: 90px; }
 
-    .field input::placeholder,
+   .field input::placeholder,
     .field textarea::placeholder { color: rgba(155, 181, 209, 0.7); }
 
     .field-inline {
@@ -813,7 +820,7 @@
       padding: 7px 12px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(134, 210, 255, 0.5);
-      background: rgba(3, 11, 32, 0.9);
+      background: rgba(255, 255, 255, 0.9);
       font-size: 12px;
     }
 
@@ -823,7 +830,7 @@
       font-size: 11px;
       color: var(--text-muted);
       border-top: 1px solid rgba(90, 132, 190, 0.4);
-      background: radial-gradient(circle at 50% 0, rgba(0, 212, 255, 0.16), transparent 60%),
+      background: radial-gradient(circle at 50% 0, rgba(42, 107, 255, 0.12), transparent 60%),
                   var(--bg);
     }
 
@@ -861,7 +868,7 @@
         right: 14px;
         left: 14px;
         border-radius: 18px;
-        background: rgba(8, 20, 50, 0.98);
+       background: rgba(255, 255, 255, 0.98);
         border: 1px solid rgba(103, 161, 220, 0.7);
         padding: 10px 14px 10px;
         display: none;
@@ -1125,9 +1132,16 @@
             <li><span data-i18n-lang="et">Sukeldumine puhtas Eesti looduses – aastaringselt.</span><span data-i18n-lang="en">Dives in clean Estonian nature – all year round.</span></li>
           </ul>
 
-          <div class="badge-row">
+         <div class="badge-row">
             <span class="badge"><span data-i18n-lang="et">Algajad &amp; edasijõudnud</span><span data-i18n-lang="en">Beginners &amp; advanced</span></span>
             <span class="badge"><span data-i18n-lang="et">Avavee treening</span><span data-i18n-lang="en">Open water training</span></span>
+          </div>
+
+          <div class="section-actions">
+            <a class="btn btn-primary" href="https://freediving.meregrupp.ee">
+              <span data-i18n-lang="et">Loe rohkem</span>
+              <span data-i18n-lang="en">Read more</span>
+            </a>
           </div>
         </div>
 
@@ -1788,4 +1802,3 @@
   </script>
 </body>
 </html>
-
