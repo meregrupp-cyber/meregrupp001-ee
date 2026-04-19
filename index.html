@@ -269,7 +269,6 @@ html[data-lang="en"] [data-en]{display:inline!important}
       <source src="assets/hero.webm" type="video/webm">
       <source src="assets/hero.mp4" type="video/mp4">
     </video>
-    <img src="assets/hero-underwater-squad.jpg" alt="" onerror="this.style.display='none'" />
   </div>
   <div class="hero-meta">EHIS 2145600 — MTÜ Meregrupp · Tallinn, EE</div>
   <div class="hero-corner">
@@ -740,11 +739,15 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   document.querySelectorAll('.program').forEach(p=>{
     const img = p.dataset.img;
     const num = p.dataset.num;
-    p.addEventListener('mouseenter',()=>{
+    p.querySelector('.p-title').addEventListener('mouseenter',()=>{
       previewImg.src = img;
       preview.dataset.num = 'Program ' + num;
       preview.classList.add('show');
       document.body.classList.add('cursor-hover');
+    });
+    p.querySelector('.p-title').addEventListener('mouseleave',()=>{
+      preview.classList.remove('show');
+      document.body.classList.remove('cursor-hover');
     });
     p.addEventListener('mouseleave',()=>{
       preview.classList.remove('show');
