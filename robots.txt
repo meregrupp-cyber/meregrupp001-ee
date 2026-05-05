@@ -1,10 +1,6 @@
-# Meregrupp — Allvee Akadeemia
-# https://meregrupp.ee
-
 User-agent: *
 Allow: /
 
-# Lubatud AI mudelid (sisu indekseerimiseks)
 User-agent: GPTBot
 Allow: /
 
