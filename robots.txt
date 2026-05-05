@@ -1,4 +1,29 @@
+# Meregrupp — Allvee Akadeemia
+# https://meregrupp.ee
+
 User-agent: *
+Allow: /
+
+# Lubatud AI mudelid (sisu indekseerimiseks)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://meregrupp.ee/sitemap.xml
