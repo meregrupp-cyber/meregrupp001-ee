@@ -10,7 +10,6 @@ const read = (p) => readFileSync(join(root, p), 'utf8');
 const pages = {
   'index.html': { lang: 'et', canonical: 'https://meregrupp.ee/' },
   'en/index.html': { lang: 'en', canonical: 'https://meregrupp.ee/en/' },
-  'en/freediving/index.html': { lang: 'en', canonical: 'https://meregrupp.ee/en/freediving/' },
   'freedive-ee/index.html': { lang: 'en', canonical: 'https://freedive.ee/', staging: true },
 };
 
@@ -20,6 +19,14 @@ const ok = (msg) => console.log('ok    ' + msg);
 
 const org = JSON.parse(read('data/organisation.json'));
 const offers = JSON.parse(read('data/offers.json'));
+
+/* /en/freediving/ on kolinud subdomeenile — path on canonical+refresh viiteleht */
+{
+  const p = read('en/freediving/index.html');
+  p.includes('rel="canonical" href="https://freediving.meregrupp.ee/"') ? ok('en/freediving: canonical → subdomeen') : fail('en/freediving: canonical vale');
+  /http-equiv="refresh" content="0; url=https:\/\/freediving\.meregrupp\.ee\//.test(p) ? ok('en/freediving: meta-refresh olemas') : fail('en/freediving: meta-refresh puudub');
+  p.includes("location.replace('https://freediving.meregrupp.ee/' + location.search + location.hash)") ? ok('en/freediving: JS säilitab query+hash') : fail('en/freediving: JS-suunamine puudu');
+}
 
 /* --- lehepõhised kontrollid --- */
 for (const [file, meta] of Object.entries(pages)) {
@@ -102,7 +109,7 @@ gw.includes("'#courses'") && gw.includes("'#youth'")
 /* --- sitemap: ainult canonical 200-lehed, mitte staging --- */
 const sm = read('sitemap.xml');
 const smUrls = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-const expectFiles = { 'https://meregrupp.ee/': 'index.html', 'https://meregrupp.ee/en/': 'en/index.html', 'https://meregrupp.ee/en/freediving/': 'en/freediving/index.html' };
+const expectFiles = { 'https://meregrupp.ee/': 'index.html', 'https://meregrupp.ee/en/': 'en/index.html' };
 for (const u of smUrls) {
   if (!expectFiles[u]) fail(`sitemap: ootamatu URL ${u}`);
   else existsSync(join(root, expectFiles[u])) ? ok(`sitemap: ${u} → fail olemas`) : fail(`sitemap: ${u} fail puudub`);
@@ -110,7 +117,8 @@ for (const u of smUrls) {
 sm.includes('freedive-ee') ? fail('sitemap: staging-leht sitemapis!') : ok('sitemap: staging väljas');
 
 /* --- toored hex-värvid ainult tokens.css-is (erandid dokumenteeritud) --- */
-const hexAllowed = new Set(['assets/css/tokens.css', '404.html']);
+/* 404.html ja en/freediving/ viiteleht on teadlikult iseseisvad (inline-stiilid) */
+const hexAllowed = new Set(['assets/css/tokens.css', '404.html', 'en/freediving/index.html']);
 for (const f of ['index.html', 'en/index.html', 'en/freediving/index.html', 'freedive-ee/index.html', 'assets/css/site.css']) {
   const src = read(f).replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '');
   const hex = src.match(/#[0-9a-fA-F]{3,8}\b(?![\w-])/g)?.filter((h) => !/^#[a-zA-Z]/.test(h) || /^#[0-9a-fA-F]{6}$/.test(h));
@@ -126,17 +134,8 @@ const h1texts = Object.keys(pages).map((f) => {
 });
 new Set(h1texts).size === h1texts.length ? ok('H1-d on unikaalsed kõigis vaadetes') : fail('H1 dubleerub vaadete vahel: ' + h1texts.join(' | '));
 
-/* --- vormid: required-väljad, honeypot, ei terviseandmeid, turundusnõusolek märkimata --- */
-const b = read('en/freediving/index.html');
-const forms = [...b.matchAll(/<form[\s\S]*?<\/form>/g)].map((m) => m[0]);
-forms.length === 3 ? ok('Vaade B: 3 vormi') : fail(`Vaade B: vorme ${forms.length}, oodati 3`);
-for (const [i, f] of forms.entries()) {
-  f.includes('hp-field') ? ok(`vorm ${i + 1}: honeypot olemas`) : fail(`vorm ${i + 1}: honeypot puudub`);
-  f.includes('privacy_consent') && f.includes('required') ? ok(`vorm ${i + 1}: privaatsusnõusolek required`) : fail(`vorm ${i + 1}: privaatsusnõusolek puudu`);
-  /name="(health|medical)/i.test(f) ? fail(`vorm ${i + 1}: kogub terviseandmeid!`) : ok(`vorm ${i + 1}: terviseandmeid ei koguta`);
-  /name="marketing_consent"[^>]*checked/.test(f) ? fail(`vorm ${i + 1}: turundusnõusolek eeltäidetud!`) : ok(`vorm ${i + 1}: turundusnõusolek märkimata`);
-  f.includes('form-error-summary') ? ok(`vorm ${i + 1}: veakokkuvõte olemas`) : fail(`vorm ${i + 1}: veakokkuvõte puudub`);
-}
+/* Vormid elavad nüüd subdomeeni repos (mgfreediving001-ee) — seal on oma testikiht,
+   mis kontrollib honeypot'i, nõusolekuid ja terviseandmete keeldu. */
 
 /* --- analytics: ühtegi konto-ID-d pole kõvakodeeritud --- */
 const aj = read('assets/js/analytics.js');
