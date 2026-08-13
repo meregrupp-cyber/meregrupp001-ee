@@ -4,7 +4,8 @@ Lähteseis kontrollitud 2026-08-13 (live-crawl + repositoorium `meregrupp001-ee`
 Vorm: `element | vanal saidil | Vaates A | Vaates B | Vaates C | märkus`.
 
 Vaade A = `https://meregrupp.ee/` (ET) + `/en/` (EN) — see repo, GitHub Pages.
-Vaade B = `/en/freediving/` (sihtmärk `freediving.meregrupp.ee` — vt märkus M1).
+Vaade B = `https://freediving.meregrupp.ee/` (eraldi repo `mgfreediving001-ee`; vana
+`/en/freediving/` path on viiteleht — vt märkus M1).
 Vaade C = `freedive.ee` (eraldi sait Cloudflare'i taga; siin repos staging kaustas `freedive-ee/`, noindex).
 
 ## meregrupp.ee
@@ -64,11 +65,23 @@ Indekseerituse kontroll vajab Search Console'i ligipääsu — pole saadaval, m�
 - Analüütika — saidil pole ühtegi analüütikaskripti, seega ajaloolisi landing page'e pole olemas.
 - Serveri/CDN-logid — GitHub Pages ei anna logisid; Cloudflare'i logid vajavad omaniku kontot.
 
-## M1 — Vaate B canonical'i otsus
+## M1 — Vaate B canonical'i otsus (LAHENDATUD 2026-08-13)
 
-`freediving.meregrupp.ee` subdomeeni olemasolu ei saa sellest repost kontrollida: GitHub Pages
-teenindab ühte CNAME-i (`meregrupp.ee`) ja DNS-i meil muuta ei ole lubatud. Seetõttu on Vaade B
-ehitatud `/en/freediving/` alla, canonical `https://meregrupp.ee/en/freediving/`. Kõik URL-id
-genereeritakse `BASE_URL` väärtusest lehe head-kommentaaris dokumenteeritud kohas. Subdomeenile
-tõstmine: eraldi repo/branch + CNAME `freediving.meregrupp.ee` + BASE_URL vahetus + 301 vanalt
-path'ilt. Otsus dokumenteeritud, DNS-i ei puudutatud.
+Selgus, et `freediving.meregrupp.ee` on olemas ja seda teenindab eraldi repo
+`meregrupp-cyber/mgfreediving001-ee` (GitHub Pages + CNAME). Vaade B tõsteti sinna kui oma
+lõplikule kodule (I etapi projektidokumendi §3 kohaselt): canonical on nüüd
+`https://freediving.meregrupp.ee/`. Vana `/en/freediving/` path on canonical+meta-refresh
+viiteleht, mis säilitab query-parameetrid ja fragmendi (GitHub Pages ei toeta server-301-e).
+Subdomeeni vana ET-kursuseleht säilitati failina `index.legacy.html` (rollback) ja selle
+ankrud kaardistati kliendipoolselt. Kursusekavatsuse klastrite omanik-URL on nüüd subdomeen
+(vt keyword-ownership.csv).
+
+
+## M2 — freedive.ee edasilükkamine (omaniku otsus 2026-08-13)
+
+freedive.ee kasutab Cloudflare'i repot, millele selles sessioonis ligipääsu pole. Omaniku
+otsus: jätta freedive.ee praegu puutumata ja teha värava cutover tulevikus. Staging
+(`freedive-ee/` + DEPLOY.md) jääb valmis; staging'u üleandmislingid osutavad juba
+`freediving.meregrupp.ee`-le, nii et tulevane deploy ei vaja linkide muutmist. Kuni
+cutover'ini dubleerib live freedive.ee kursuseinfot (€180 jm) — see on teadaolev,
+dokumenteeritud vaheolek, mille lahendab värava deploy.

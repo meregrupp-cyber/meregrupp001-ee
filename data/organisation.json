@@ -25,7 +25,7 @@
   },
   "domains": {
     "portal": "https://meregrupp.ee",
-    "freediving": "https://meregrupp.ee/en/freediving/",
+    "freediving": "https://freediving.meregrupp.ee/",
     "gateway": "https://freedive.ee",
     "other": "https://merehunt.ee"
   },

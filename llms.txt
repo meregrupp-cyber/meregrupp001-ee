@@ -10,8 +10,8 @@ Kauri tee 12-5, Alliku küla, Saue vald, Harju maakond, 76401, Eesti.
 
 Domeenide rollid (canonical faktiallikas on meregrupp.ee):
 - https://meregrupp.ee/ — katusportaal, eesti keeles (EN: https://meregrupp.ee/en/)
-- https://meregrupp.ee/en/freediving/ — vabasukeldumise kursused, Rummu fundive'id ja
-  reisiplaneerimine; AINUS koht, kus elavad kursusefaktid ja broneerimine
+- https://freediving.meregrupp.ee/ — vabasukeldumise kursused, Rummu fundive'id ja
+  reisiplaneerimine; AINUS koht, kus elavad kursusefaktid ja broneerimine (eraldi subdomeen)
 - https://freedive.ee/ — ingliskeelne sihtkohavärav "freediving in Estonia" (Rummu karjäär,
   hooajad, jää-alune sukeldumine); ei müü kursusi, lingib broneerimiseks meregrupp.ee-le
 - https://merehunt.ee/ — eraldi seotud domeen
@@ -20,7 +20,7 @@ Domeenide rollid (canonical faktiallikas on meregrupp.ee):
 
 - [Avaleht (ET)](https://meregrupp.ee/): programmid, meeskond, kontakt
 - [Home (EN)](https://meregrupp.ee/en/): programs, team, contact
-- [Freediving in Estonia](https://meregrupp.ee/en/freediving/): Start (algajakursus inglise
+- [Freediving in Estonia](https://freediving.meregrupp.ee/): Start (algajakursus inglise
   keeles), Dive Rummu (juhendatud, tingimuslik fundive koolitatud vabasukeldujale),
   Plan Ahead (tulevase reisi planeerimine)
 
