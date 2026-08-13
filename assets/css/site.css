@@ -71,7 +71,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     display:flex;align-items:center;
   }
   .nav-drawer-panel a:hover{background:var(--abyss-800);color:var(--aqua-300)}
-  .header-cta{display:none}
+  /* .btn reegel tuleb failis hiljem — vajab kõrgemat spetsiifilisust, et peidik võidaks */
+  .header-tools .header-cta{display:none}
 }
 
 /* ---------- sügavusriba ---------- */
@@ -323,4 +324,5 @@ legend{font-family:var(--font-mono);font-size:var(--fs-mono);letter-spacing:.16e
 @media (max-width:360px){
   .hero-actions .btn{width:100%}
   .routes{gap:.9rem}
+  .btn{max-width:100%;white-space:normal;text-align:center}
 }

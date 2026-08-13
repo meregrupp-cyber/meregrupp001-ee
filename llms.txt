@@ -1,0 +1,31 @@
+# Meregrupp — Allvee Akadeemia / Aquatic Academy
+
+> MTÜ Meregrupp (reg 80390699, EHIS 2145600), tegutsenud alates 2018. Veealuste spordialade
+> akadeemia Eestis: vabasukeldumine, merineitsid, allveevõitlus, allveeskuutrid (DPV), MGVS,
+> allveefoto & film, vetelpääste ja apnoe koolitused. Treeningud Tallinnas basseinis ja
+> avavees, aastaringselt. Keeled: eesti, inglise.
+
+Kontakt: allveeakadeemia@meregrupp.ee · +372 510 5573 ·
+Kauri tee 12-5, Alliku küla, Saue vald, Harju maakond, 76401, Eesti.
+
+Domeenide rollid (canonical faktiallikas on meregrupp.ee):
+- https://meregrupp.ee/ — katusportaal, eesti keeles (EN: https://meregrupp.ee/en/)
+- https://meregrupp.ee/en/freediving/ — vabasukeldumise kursused, Rummu fundive'id ja
+  reisiplaneerimine; AINUS koht, kus elavad kursusefaktid ja broneerimine
+- https://freedive.ee/ — ingliskeelne sihtkohavärav "freediving in Estonia" (Rummu karjäär,
+  hooajad, jää-alune sukeldumine); ei müü kursusi, lingib broneerimiseks meregrupp.ee-le
+- https://merehunt.ee/ — eraldi seotud domeen
+
+## Leheküljed
+
+- [Avaleht (ET)](https://meregrupp.ee/): programmid, meeskond, kontakt
+- [Home (EN)](https://meregrupp.ee/en/): programs, team, contact
+- [Freediving in Estonia](https://meregrupp.ee/en/freediving/): Start (algajakursus inglise
+  keeles), Dive Rummu (juhendatud, tingimuslik fundive koolitatud vabasukeldujale),
+  Plan Ahead (tulevase reisi planeerimine)
+
+## Märkused
+
+- Kursuste hinnad ja kuupäevad kinnitatakse päringu peale — leht ei avalda kinnitamata numbreid.
+- Rummu sukeldumised on ilmast sõltuvad; go/no-go otsustab guide.
+- See fail on abistav avastusfail, mitte garanteeritud ranking-signaal.
