@@ -36,16 +36,20 @@ Vt ka `docs/needs-confirmation.md` (koondnimekiri omanikule) ja `data/offers.jso
 5. **404-lehe auto-redirect avalehele** (meta-refresh 2 s) — eemaldatud kui soft-404 muster.
    Abistav 404-leht linkidega jääb, staatus on päris 404.
 
+## Omaniku otsused 2026-08-13
+
+- **Level 1 hind 180 EUR** — kinnitatud, avaldatud subdomeenil (EN + ET leht, sama URL-paar).
+- **AIDA jääb mainimata** — ei staatust, ei isiklikku sertifikaati, ei alla-16 tabelit.
+- **freedive.ee cutover lükatud edasi** — staging ootab (vt seo-baseline M2).
+
 ## needs_confirmation — EI avaldata faktina enne omaniku kinnitust
 
 Need on freedive.ee-l või mujal avalikult nähtud lähteandmed, mitte avaldamisluba (§10, §18):
 
-- Freediving Level 1: €180, "all included", max 5 m, vanus 18+ (16–18 hooldaja nõusolekul),
-  ujumisoskus 100 m, "3 h teooriat + 3 h basseini". Vaates B näidatakse hinnaloogikat ausas
-  "küsi järgmist kuupäeva ja kehtivat hinda" olekus, mitte numbrina.
-  NB: vana meregrupp.ee programmiplokk näitas "Tase 1 (180eur)" — see number on uuel lehel
-  asendatud lingiga Vaatele B, et hinnal oleks täpselt üks kodu (§3.8) ja number saaks
-  avalikuks alles kinnitatuna.
+- Freediving Level 1 HIND: **180 EUR — confirmed (omanik, 2026-08-13)**. Avaldatud ainult
+  freediving.meregrupp.ee-l (hinna ainuke kodu, §3.8). Ülejäänud Level 1 detailid ("all
+  included", max 5 m, vanus 18+ / 16–18 hooldajaga, ujumisoskus 100 m, "3 h teooriat + 3 h
+  basseini") on endiselt needs_confirmation ega ole avaldatud.
 - Level 2: kuni 14 m, eeldab Level 1 — sama olek.
 - Introduction/Starter vs Level 1 eristus — omanik defineerib.
 - Rummu: sügavused, nähtavus, ligipääs, hooajad, transport, tühistamisloogika, go/no-go protsess.
@@ -55,16 +59,11 @@ Need on freedive.ee-l või mujal avalikult nähtud lähteandmed, mitte avaldamis
   (aastaringne sh talvine treening), numbrilised väärtused on UI-st väljas.
 - Instruktorite pädevusnimetused täpsel kujul (praegused bio-tekstid säilitatud sellisel kujul
   nagu nad juba avalikud on; uusi väiteid ei lisatud).
-- AIDA: instruktori isiklik AIDA4 Master Freediver + sertifikaadilink (freedive.ee-l avalik) —
-  säilitamine vajab omaniku kirjalikku kinnitust (§3.6); Vaates B/C praegu väljas.
-- AIDA alla-16 piirtabel ja selle omistus — väljas kuni omaniku otsuseni.
 - Mermaid Sport: lansseerimise hooaeg ("sügis 2026" tuleb `data/offers.json` väljast
   `launch_season_et/en`), sihtrühm, vanusepiirid, waitlist'i omanik.
 - Vormide päris sihtkoht, automaatvastus ja lubatav vastamisaeg ("kaks tööpäeva" EI ole
   avaldatud, kuna teenindusstandard pole kinnitatud).
 - Arvustused/testimonialid: ühtegi salvestatud loaga arvustust pole → sektsioonid välja jäetud.
-- Õige avalik e-post: kolm varianti ringluses (vt nap-inconsistencies.md). Kuni otsuseni
-  kasutab UI `allveeakadeemia@meregrupp.ee` (praeguse põhisaidi avalik kanal); JSON-LD-s sama.
 
 ## do_not_publish
 

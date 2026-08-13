@@ -33,11 +33,9 @@
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
 
-      /* honeypot + ajakontroll */
+      /* honeypot: täidetud peidetud väli = robot, vaikne drop */
       var hp = form.querySelector('.hp-field input');
-      if ((hp && hp.value) || (startedAt && Date.now() - startedAt < 4000)) {
-        return; /* vaikne drop — robot */
-      }
+      if (hp && hp.value) return;
 
       /* valideerimine + veakokkuvõte + fookus esimesele veale */
       var summary = form.querySelector('.form-error-summary');
@@ -83,6 +81,9 @@
       });
 
       if (MG_FORM_ENDPOINT) {
+        /* ajakontroll ainult päris endpoint'i vastu: alla 4 s täidetud vorm = robot.
+           Valideerimine ja veateated käivad enne — päris kasutajat ei tohi vaikselt dropp'ida. */
+        if (startedAt && Date.now() - startedAt < 4000) return;
         /* päris endpoint: POST + tänuleht */
         var btn = form.querySelector('[type="submit"]');
         if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = '…'; }
