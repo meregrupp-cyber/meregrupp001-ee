@@ -11,10 +11,10 @@ Seis 2026-08-13. Reegel: üks NAP kõikjal, jõustatud failist `data/organisatio
 | meregrupp.ee JSON-LD | `info@meregrupp.ee` |
 | freedive.ee (cdn-cgi obfuskeeritud) | `meregrupp@gmail.com` |
 
-**Otsus vajalik omanikult:** milline on ametlik avalik aadress ja kas ülejäänud suunatakse.
-Kuni otsuseni kasutab kogu uus teostus `allveeakadeemia@meregrupp.ee` (praeguse põhisaidi
-avalik kanal) — nii UI-s kui JSON-LD-s, ühest andmefailist. JSON-LD `info@` lahknevus on
-sellega parandatud; gmail-aadress kaob freedive.ee-lt cutover'iga.
+**OTSUSTATUD (omanik, 2026-08-13):** ametlik avalik aadress on **`meregrupp@gmail.com`**.
+Kogu uus teostus (UI, mailto-lingid, JSON-LD, llms.txt, `data/organisation.json`) kasutab
+ainult seda. `allveeakadeemia@meregrupp.ee` ja `info@meregrupp.ee` on saidilt eemaldatud;
+omanik otsustab ise, kas hoiab need aadressid edasisuunamisel.
 
 ## Aadress
 

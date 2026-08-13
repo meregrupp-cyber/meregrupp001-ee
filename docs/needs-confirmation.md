@@ -45,7 +45,7 @@ väärtus EI ilmu avalikus UI-s faktina. Masinloetav olek: `data/offers.json` �
       "coming" olekus alles siis, kui omanik teksti annab; praegu linki ei näidata)
 
 ## Identiteet
-- [ ] Ametlik avalik e-post (3 varianti ringluses — vt nap-inconsistencies.md)
+- [x] Ametlik avalik e-post: **meregrupp@gmail.com** (omanik kinnitas 2026-08-13; teostatud kõikjal)
 - [ ] Aadressi vorming 12-5 vs 12/1 + kolmandate osapoolte kataloogide parandus
 - [ ] Kas "üheksa programmi" oli tekstiviga või on olemas üheksas programm?
 - [ ] Allveevõitluse areeni mõõt: 3×3 m või 4×4 m?
