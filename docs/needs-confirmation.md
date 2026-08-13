@@ -7,7 +7,7 @@ väärtus EI ilmu avalikus UI-s faktina. Masinloetav olek: `data/offers.json` �
 
 ## Kursused ja hinnad
 - [ ] Introduction/Starter vs Level 1 — kas on kaks eri toodet ja mis neid eristab?
-- [ ] Level 1 hind (avalikult nähtud €180 — kas kehtib?), mis hinna sees on
+- [x] Level 1 hind: **180 EUR** (omanik kinnitas 2026-08-13; avaldatud ainult freediving.meregrupp.ee-l). Mis hinna sees on — endiselt kinnitamata
 - [ ] Level 1 kestus ja jaotus (nähtud: 3 h teooria + 3 h bassein — kas kehtib?)
 - [ ] Level 1 sügavus (nähtud: kuni 5 m), vanusepiir (18+ / 16–18 hooldajaga), ujumisnõue (100 m)
 - [ ] Level 2 tingimused (kuni 14 m, eeldab Level 1)
@@ -26,11 +26,9 @@ väärtus EI ilmu avalikus UI-s faktina. Masinloetav olek: `data/offers.json` �
 ## Inimesed ja pädevused
 - [ ] Taniel — pädevusnimetuste täpne loetelu ja sõnastus (praegu avaldatud kujul säilitatud)
 - [ ] Ilona — sama
-- [ ] AIDA: kas instruktori isiklik "AIDA4 Master Freediver" + sertifikaadilink
-      (eos.aidainternational.org/print_certificate/51738) tohib uuel saidil olla? (§3.6 —
-      lubatud ainult kirjaliku kinnitusega; praegu väljas)
-- [ ] AIDA alla-16 piirtabel: kas säilitada koos kinnitatud allika ja omistusega, viidata
-      algallikale otse või jätta välja? (praegu väljas)
+- [x] AIDA: **jääb mainimata** (omaniku otsus 2026-08-13) — ei organisatsiooni staatust,
+      ei isiklikku sertifikaati, ei alla-16 tabelit üheski vaates. Testid jõustavad
+      (AIDA-stringi keeld mõlemas repos).
 
 ## Mermaid Sport
 - [ ] Lõplik nimi, sihtrühm, vanusepiirid
