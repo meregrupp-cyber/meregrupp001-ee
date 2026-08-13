@@ -1,0 +1,26 @@
+url,domeen,tüüp,allikas,staatus_2026-08-13,märkus
+https://meregrupp.ee/,meregrupp.ee,leht,sitemap.xml + live-crawl,200,ainus indekseeritav leht; ET+EN samal URL-il
+https://meregrupp.ee/#programmid,meregrupp.ee,fragment,menüü,200,id säilitatakse uuel lehel
+https://meregrupp.ee/#meeskond,meregrupp.ee,fragment,menüü,200,id säilitatakse uuel lehel
+https://meregrupp.ee/#kontakt,meregrupp.ee,fragment,menüü,200,id säilitatakse uuel lehel
+https://meregrupp.ee/404.html,meregrupp.ee,leht,repo,200,404-leht; GitHub Pages serveerib tundmatutele path'idele 404 staatusega
+https://meregrupp.ee/robots.txt,meregrupp.ee,fail,repo + live,200,säilitatakse
+https://meregrupp.ee/sitemap.xml,meregrupp.ee,fail,repo + live,200,uuendatakse uute URL-idega
+https://meregrupp.ee/assets/og-image2.jpg,meregrupp.ee,asset,meta,200,OG-pilt; säilitatakse
+https://drive.proton.me/urls/M8F2AAT8A0#5fNBibvFBfhc,väline,dokument,programmiplokk 02 Freediving L1,väline,ei saa redirect'ida; HTML-vaste = Vaade B Start; linki ei eemaldata enne B live'i
+https://drive.proton.me/urls/6HTAC4JC5G#NEaDD4GCTW1b,väline,dokument,programmiplokk 03 Merineitsi L1,väline,jääb kuni HTML-vaste olemas
+https://drive.proton.me/urls/GQR4J3BMS0#F8u7d-c8RG52,väline,dokument,programmiplokk 04 võistlusreeglid,väline,jääb kuni HTML-vaste olemas
+https://drive.proton.me/urls/6SAK0T2RJ0#38wFP9jbBVe7,väline,dokument,programmiplokk 06 MGVS,väline,jääb kuni HTML-vaste olemas
+https://drive.proton.me/urls/R5H4M5BFKW#JPo8wM-S6ssa,väline,dokument,programmiplokk 08 basseinipääste,väline,jääb kuni HTML-vaste olemas
+https://freedive.ee/,freedive.ee,leht,live-crawl,200,jääb 200-ks; saab sihtkohaväravaks (Vaade C)
+https://freedive.ee/#top,freedive.ee,fragment,logo link,200,säilib
+https://freedive.ee/#courses,freedive.ee,fragment,menüü,200,kursusesisu eemaldatakse → JS-fragmendikaardistus Vaate B Start-sektsioonile
+https://freedive.ee/#method,freedive.ee,fragment,menüü,200,sisu säilib väravas (How Estonians train) — id säilitatakse
+https://freedive.ee/#training,freedive.ee,fragment,menüü,200,sisu säilib väravas (ice/cold-water + seasons) — id säilitatakse
+https://freedive.ee/#youth,freedive.ee,fragment,menüü,200,alla-16 tabel vajab omaniku otsust; kuni otsuseni kaardistatakse fragment kontaktisektsioonile
+https://freedive.ee/#contact,freedive.ee,fragment,menüü,200,id säilitatakse
+https://freedive.ee/media/hero.jpg,freedive.ee,asset,live-crawl,200,pole selles repos; freedive.ee deploy kasutab oma assets'e
+https://merehunt.ee/,merehunt.ee,leht,meregrupp.ee jalus,ei kontrollitud sisu,ainult registreeritud; sisu ei puudutata (§5)
+puudub,meregrupp.ee,allikas,Google Search Console,ligipääsu pole,indekseeritud lehtede ja 404-raporti inventuur tegemata — märgitud puuduvaks allikaks
+puudub,meregrupp.ee,allikas,analüütika,skripti pole saidil,ajaloolisi landing page'e ei eksisteeri
+puudub,mõlemad,allikas,serveri/CDN-logid,ligipääsu pole,GitHub Pages ei paku; Cloudflare vajab omaniku kontot

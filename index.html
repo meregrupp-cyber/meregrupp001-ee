@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="et" data-lang="et">
+<html lang="et" class="no-js">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ============ PRIMARY SEO ============ -->
 <title>Meregrupp — Allvee Akadeemia | Vabasukeldumine Eestis</title>
-<meta name="description" content="Allvee Akadeemia: vabasukeldumine, merineitsid, allveevõitlus, MGVS, koolitused. Päris meri, sertifitseeritud juhendajad, aastaringne treening." /><meta name="keywords" content="vabasukeldumine, freediving Eesti, allveevõitlus, merineitsi koolitus, mermaid Estonia, allveeskuuter, DPV rent, MGVS, vetelpääste koolitus, apnoe, allveefoto Eesti, sukeldumiskool Tallinn, Meregrupp, Allvee Akadeemia, Aquatic Academy" />
+<meta name="description" content="Allvee Akadeemia: vabasukeldumine, merineitsid, allveevõitlus, MGVS, koolitused. Päris vesi, sertifitseeritud juhendajad, aastaringne treening Tallinnas ja avavees." />
+<meta name="keywords" content="vabasukeldumine, freediving Eesti, allveevõitlus, merineitsi koolitus, mermaid Estonia, allveeskuuter, DPV rent, MGVS, vetelpääste koolitus, apnoe, allveefoto Eesti, sukeldumiskool Tallinn, Meregrupp, Allvee Akadeemia, Aquatic Academy" />
 <meta name="author" content="MTÜ Meregrupp" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="language" content="Estonian" />
@@ -18,33 +19,40 @@
 <link rel="icon" type="image/png" href="assets/mgakalogoo.png" />
 <link rel="apple-touch-icon" href="assets/mgakalogoo.png" />
 
-<!-- ============ OPEN GRAPH (Facebook, LinkedIn, WhatsApp, Slack) ============ -->
+<!-- ============ OPEN GRAPH ============ -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://meregrupp.ee/" />
 <meta property="og:title" content="Meregrupp — Allvee Akadeemia | Vabasukeldumine Eestis" />
-<meta property="og:description" content="Allvee Akadeemia: vabasukeldumine, merineitsid, allveevõitlus, MGVS, koolitused. Päris meri, sertifitseeritud juhendajad." />
+<meta property="og:description" content="Allvee Akadeemia: vabasukeldumine, merineitsid, allveevõitlus, MGVS, koolitused. Päris vesi, sertifitseeritud juhendajad." />
 <meta property="og:image" content="https://meregrupp.ee/assets/og-image2.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:alt" content="Meregrupp — Allvee Akadeemia. Vabasukeldumine, merineitsid, allveevõitlus, koolitused." /><meta property="og:site_name" content="Meregrupp" />
+<meta property="og:image:alt" content="Meregrupp — Allvee Akadeemia. Vabasukeldumine, merineitsid, allveevõitlus, koolitused." />
+<meta property="og:site_name" content="Meregrupp" />
 <meta property="og:locale" content="et_EE" />
-<meta property="fb:app_id" content="1281329930736127" />
 <meta property="og:locale:alternate" content="en_US" />
+<meta property="fb:app_id" content="1281329930736127" />
 
 <!-- ============ TWITTER / X ============ -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="https://meregrupp.ee/" />
 <meta name="twitter:title" content="Meregrupp — Allvee Akadeemia" />
-<meta name="twitter:description" content="Üheksa programmi vee all. Vabasukeldumine, merineitsid, koolitused. Päris meri, sertifitseeritud juhendajad." />
-<meta name="twitter:image" content="https://meregrupp.ee/assets/og-image2.jpg" /><meta name="twitter:image:alt" content="Meregrupp — Allvee Akadeemia" />
+<meta name="twitter:description" content="Veealused programmid ühe katuse all: vabasukeldumine, merineitsid, koolitused. Päris vesi, sertifitseeritud juhendajad." />
+<meta name="twitter:image" content="https://meregrupp.ee/assets/og-image2.jpg" />
+<meta name="twitter:image:alt" content="Meregrupp — Allvee Akadeemia" />
 
-<!-- ============ HREFLANG (kakskeelne sait) ============ -->
+<!-- ============ HREFLANG (eraldi keele-URL-id) ============ -->
 <link rel="alternate" hreflang="et" href="https://meregrupp.ee/" />
-<link rel="alternate" hreflang="en" href="https://meregrupp.ee/" />
-<link rel="alternate" hreflang="x-default" href="https://meregrupp.ee/" />
+<link rel="alternate" hreflang="en" href="https://meregrupp.ee/en/" />
+<link rel="alternate" hreflang="x-default" href="https://meregrupp.ee/en/" />
 
-<!-- ============ SCHEMA.ORG STRUCTURED DATA ============ -->
+<link rel="preload" href="assets/fonts/fraunces-italic-100-900-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/css/fonts.css" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+
+<!-- ============ SCHEMA.ORG ============ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -54,15 +62,12 @@
       "@id": "https://meregrupp.ee/#organization",
       "name": "Meregrupp — Allvee Akadeemia",
       "alternateName": ["Aquatic Academy", "Allvee Akadeemia", "MTÜ Meregrupp"],
-      "url": "https://meregrupp.ee",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://meregrupp.ee/assets/mgakalogoo.png"
-      },
+      "url": "https://meregrupp.ee/",
+      "logo": { "@type": "ImageObject", "url": "https://meregrupp.ee/assets/mgakalogoo.png" },
       "image": "https://meregrupp.ee/assets/hero-poster.jpg",
-      "description": "Allvee Akadeemia pakub üheksat veealust programmi: ujumise algõpetus, vabasukeldumine, merineitsid, allveevõitlus, allveeskuutrid (DPV), MGVS militaartreening, allveefoto & film, vetelpääste ja apnoe koolitused. Sertifitseeritud juhendajad, päris meri, aastaringne treening.",
-      "email": "info@meregrupp.ee",
-      "telephone": "+372 5105573",
+      "description": "Allvee Akadeemia veealused programmid: ujumise algõpetus, vabasukeldumine, merineitsid, allveevõitlus, allveeskuutrid (DPV), MGVS, allveefoto & film ning vetelpääste ja apnoe koolitused. Sertifitseeritud juhendajad, päris vesi, aastaringne treening.",
+      "email": "meregrupp@gmail.com",
+      "telephone": "+372 510 5573",
       "foundingDate": "2018",
       "address": {
         "@type": "PostalAddress",
@@ -72,10 +77,7 @@
         "postalCode": "76401",
         "addressCountry": "EE"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Estonia"
-      },
+      "areaServed": { "@type": "Country", "name": "Estonia" },
       "knowsLanguage": ["et", "en"],
       "sameAs": [
         "https://www.facebook.com/meregrupp",
@@ -83,35 +85,17 @@
         "https://merehunt.ee"
       ],
       "identifier": [
-        {
-          "@type": "PropertyValue",
-          "name": "EHIS ID",
-          "value": "2145600"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Registrikood",
-          "value": "80390699"
-        }
+        { "@type": "PropertyValue", "name": "EHIS ID", "value": "2145600" },
+        { "@type": "PropertyValue", "name": "Registrikood", "value": "80390699" }
       ],
       "founder": {
         "@type": "Person",
         "name": "Taniel",
-        "jobTitle": "Peatreener · Allvee Akadeemia direktor",
-        "description": "Master Freediver, Public Safety Diver, võitlussukelduja (Merekaitseliit), OPITO BOSIET / HUET, parameedik."
+        "jobTitle": "Peatreener · Allvee Akadeemia direktor"
       },
       "employee": [
-        {
-          "@type": "Person",
-          "name": "Taniel",
-          "jobTitle": "Peatreener · Akadeemia direktor"
-        },
-        {
-          "@type": "Person",
-          "name": "Ilona",
-          "jobTitle": "Freediving instruktor · ohutuse spetsialist",
-          "description": "Freediving Tase 1 & 2, esmaabi, muinasvrakile sukelduja, töökeskkonna spetsialist."
-        }
+        { "@type": "Person", "name": "Taniel", "jobTitle": "Peatreener · Akadeemia direktor" },
+        { "@type": "Person", "name": "Ilona", "jobTitle": "Freediving instruktor · ohutuse spetsialist" }
       ]
     },
     {
@@ -119,882 +103,401 @@
       "@id": "https://meregrupp.ee/#website",
       "url": "https://meregrupp.ee/",
       "name": "Meregrupp — Allvee Akadeemia",
-      "description": "Vabasukeldumine, merineitsid, allveevõitlus, koolitused. Sertifitseeritud Allvee Akadeemia Eestis.",
-      "publisher": {"@id": "https://meregrupp.ee/#organization"},
+      "description": "Vabasukeldumine, merineitsid, allveevõitlus, koolitused. Allvee Akadeemia Eestis.",
+      "publisher": { "@id": "https://meregrupp.ee/#organization" },
       "inLanguage": ["et", "en"]
     },
     {
       "@type": "ItemList",
+      "@id": "https://meregrupp.ee/#programs",
       "name": "Allvee Akadeemia programmid",
-      "description": "Üheksa veealust treeningprogrammi MTÜ Meregrupp Allvee Akadeemias",
       "numberOfItems": 8,
       "itemListElement": [
-       {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "Course",
-            "name": "Allveeskuutrid (DPV) — müük, rent ja hooldus",
-            "description": "Kompaktsed elektrilised allveeskuutrid LEFEET. Müük, rent ja hooldus. Snorkeldamine, sukeldumine ja SUP — järgmisel tasemel.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "areaServed": {"@type": "Country", "name": "Estonia"}
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Course",
-            "name": "Vabasukeldumine (Freediving) Tase 1 ja 2",
-            "description": "Avasta veealune maailm ühe rahuliku hingetõmbega. Treenime avavees aastaringselt — ka jää all. Kuni 14 m sügavuseni.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "inLanguage": "et"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "Course",
-            "name": "Merineitsid (Mermaids)",
-            "description": "Sabauimega ujumine, graatsiline liikumine ja professionaalsed allveefotosessioonid. Veealune muinasjutt monolesega.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "inLanguage": "et"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "Course",
-            "name": "Allveevõitlus (Underwater Fights)",
-            "description": "Akvatlon kohtub idamaiste võitluskunstidega. Kompaktne 3×3 m ujuvareen, üks hingetõmme, kaks võitlejat.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "educationalLevel": "Advanced",
-            "inLanguage": "et"
-          }
-        },
-         {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "Course",
-            "name": "Allveeskuutrid (DPV) — müük, rent ja hooldus",
-            "description": "Kompaktsed elektrilised allveeskuutrid LEFEET. Müük, rent ja hooldus. Snorkeldamine, sukeldumine ja SUP — järgmisel tasemel.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "areaServed": {"@type": "Country", "name": "Estonia"}
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "item": {
-            "@type": "Course",
-            "name": "MGVS — allveeoperaatori erialaprogramm",
-            "description": "Erialaprogramm jõustruktuuridele ja eraisikutele. Maa, vesi, vee all — meeskonnatöö ja distsipliin füüsilise ja vaimse vastupidavuse piirini.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "educationalLevel": "Advanced",
-            "inLanguage": "et"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "item": {
-            "@type": "Course",
-            "name": "Allveefoto & Film",
-            "description": "Merineitsi sessioonid, portreed, fantaasiaprojektid, muusikavideod ja reklaamid — kontseptsioonist lõpptulemuseni.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"}
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "item": {
-            "@type": "Course",
-            "name": "Vetelpääste ja apnoe koolitused",
-            "description": "Sihitud moodulid eraisikutele ja meeskondadele. Vetelpääste, apnoe stressitaluvuse arendamine, lühikursused. Selge eesmärk, mõõdetav tulemus.",
-            "provider": {"@id": "https://meregrupp.ee/#organization"},
-            "inLanguage": "et"
-          }
-        }
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Course", "name": "Ujumise algõpetus", "description": "Süsteemne ja lõbus tee algajast julge ujujani. Lastele ja täiskasvanutele, väikestes gruppides.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "inLanguage": "et" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Course", "name": "Vabasukeldumine (Freediving)", "description": "Avasta veealune maailm ühe rahuliku hingetõmbega. Treenime avavees aastaringselt.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "url": "https://meregrupp.ee/en/freediving/", "inLanguage": ["et", "en"] } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Course", "name": "Merineitsid (Mermaids)", "description": "Sabauimega ujumine, graatsiline liikumine ja professionaalsed allveefotosessioonid.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "inLanguage": "et" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Course", "name": "Allveevõitlus (Underwater Fights)", "description": "Akvatlon kohtub idamaiste võitluskunstidega. Ujuvareen, üks hingetõmme, kaks võitlejat.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "inLanguage": "et" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Course", "name": "Allveeskuutrid (DPV) — müük, rent ja hooldus", "description": "Kompaktsed elektrilised allveeskuutrid LEFEET. Müük, rent ja hooldus.", "provider": { "@id": "https://meregrupp.ee/#organization" } } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Course", "name": "MGVS — allveeoperaatori erialaprogramm", "description": "Erialaprogramm jõustruktuuridele ja eraisikutele. Maa, vesi, vee all — meeskonnatöö ja distsipliin.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "inLanguage": "et" } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "Course", "name": "Allveefoto & Film", "description": "Merineitsi sessioonid, portreed, fantaasiaprojektid, muusikavideod ja reklaamid.", "provider": { "@id": "https://meregrupp.ee/#organization" } } },
+        { "@type": "ListItem", "position": 8, "item": { "@type": "Course", "name": "Vetelpääste ja apnoe koolitused", "description": "Sihitud moodulid eraisikutele ja meeskondadele. Selge eesmärk, mõõdetav tulemus.", "provider": { "@id": "https://meregrupp.ee/#organization" }, "inLanguage": "et" } }
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Avaleht",
-          "item": "https://meregrupp.ee/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Avaleht", "item": "https://meregrupp.ee/" }
       ]
     }
   ]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..900,0..100;1,9..144,200..900,0..100&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" />
-
-<style>
-:root{
-  --bg:#050709; --bg-soft:#0A0E13;
-  --fg:#E8E4D8; --fg-dim:#888278; --fg-faint:#3A3A36;
-  --accent:#6FE5D2; --accent-deep:#1F8F82;
-  --line:rgba(232,228,216,.12); --line-strong:rgba(232,228,216,.28);
-  --serif:'Fraunces',serif; --sans:'Inter Tight',sans-serif; --mono:'JetBrains Mono',monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{font-family:var(--sans);background:var(--bg);color:var(--fg);overflow-x:hidden;cursor:none;font-weight:300;letter-spacing:.005em;line-height:1.5;min-height:100vh}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none;cursor:none}
-button{cursor:none;border:0;background:none;color:inherit;font-family:inherit}
-::-webkit-scrollbar{width:0;background:transparent}
-
-.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;mix-blend-mode:difference}
-.cursor-dot{width:6px;height:6px;background:var(--fg);transform:translate(-50%,-50%);transition:width .25s,height .25s}
-.cursor-ring{width:36px;height:36px;border:1px solid var(--fg);transform:translate(-50%,-50%);transition:transform .25s,opacity .25s,border-color .25s}
-.cursor-hover .cursor-dot{width:0;height:0}
-.cursor-hover .cursor-ring{transform:translate(-50%,-50%) scale(1.6);border-color:var(--accent)}
-
-.loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 1.2s cubic-bezier(.83,0,.17,1)}
-.loader.done{transform:translateY(-100%)}
-.loader-num{font-family:var(--mono);font-size:14vw;line-height:.9;color:var(--fg);font-weight:300;letter-spacing:-.04em;font-feature-settings:"tnum";text-align:center}
-.loader-num small{font-size:.18em;opacity:.5;margin-left:.4em;letter-spacing:.1em}
-.loader-label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim);margin-top:1.5rem;text-align:center}
-.loader-bar{margin-top:2rem;width:200px;height:1px;background:var(--line);position:relative}
-.loader-bar > div{position:absolute;left:0;top:0;height:100%;background:var(--accent);width:0%;transition:width .15s ease}
-
-canvas#bg{position:fixed;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
-.bg-grad{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(111,229,210,.05),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(31,143,130,.08),transparent 60%),linear-gradient(180deg,transparent 0%,rgba(5,7,9,.5) 50%,var(--bg) 100%)}
-
-.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,7,9,.4) 0%,rgba(5,7,9,.15) 40%,rgba(5,7,9,.6) 100%)}
-.hero-media video,.hero-media img{position:absolute;top:50%;left:50%;width:100%;height:100%;object-fit:cover;object-position:center;transform:translate(-50%,-50%) scale(1.05);filter:saturate(.85) contrast(1.05);animation:heroFloat 30s ease-in-out infinite alternate}
-@keyframes heroFloat{from{transform:translate(-50%,-50%) scale(1.05)}to{transform:translate(-52%,-48%) scale(1.12)}}
-
-header.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;mix-blend-mode:difference}
-.brand{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg);display:flex;align-items:center;gap:.8rem}
-.brand img{width:84px;height:84px;object-fit:contain;filter: brightness(2)}
-.brand-text{line-height:1.3}
-.brand-text small{display:block;font-size:9px;color:var(--fg-dim);letter-spacing:.25em;margin-top:2px}
-nav.menu{display:flex;gap:2rem;align-items:center}
-nav.menu a{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim);transition:color .25s}
-nav.menu a:hover{color:var(--fg)}
-.lang{display:flex;gap:.7rem;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.2em}
-.lang button{color:var(--fg-dim);padding:0;letter-spacing:.2em;font-size:11px;text-transform:uppercase;transition:color .25s}
-.lang button.active{color:var(--accent)}
-.lang span{color:var(--fg-faint)}
-
-.depth{position:fixed;top:50%;right:1.5rem;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;align-items:center;gap:1rem;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--fg-dim);mix-blend-mode:difference}
-.depth-line{width:1px;height:40vh;background:var(--line);position:relative;overflow:hidden}
-.depth-line > div{position:absolute;top:0;left:0;width:100%;height:0%;background:linear-gradient(180deg,var(--accent),var(--accent-deep));transition:height .15s linear}
-.depth-current{color:var(--accent);font-size:13px;font-weight:500}
-
-main{position:relative;z-index:3}
-section{position:relative;padding:8rem 2.5rem;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
-
-.hero{padding-top:0;padding-bottom:6rem;justify-content:flex-end;overflow:hidden}
-.hero-meta{position:absolute;top:50%;left:2.5rem;transform:translateY(-50%) rotate(-90deg);transform-origin:left center;font-family:var(--mono);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--fg-dim);white-space:nowrap;z-index:5}
-.hero-corner{position:absolute;top:6rem;right:2.5rem;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--fg-dim);text-align:right;line-height:1.8;text-transform:uppercase;z-index:5}
-.hero-corner span{color:var(--accent)}
-.hero-content{position:relative;z-index:5}
-.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(4.5rem,15vw,21rem);line-height:.85;letter-spacing:-.03em;font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 80;margin-left:4rem;text-shadow:0 4px 40px rgba(0,0,0,.4)}
-.hero h1 .l{display:block;overflow:hidden}
-.hero h1 .l span{display:inline-block;transform:translateY(110%);animation:rise 1.2s cubic-bezier(.16,1,.3,1) forwards}
-.hero h1 .l:nth-child(2) span{animation-delay:.12s}
-@keyframes rise{to{transform:translateY(0)}}
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
-.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:3rem;margin-left:4rem;gap:2rem;flex-wrap:wrap;position:relative;z-index:5}
-.hero-tag{font-family:var(--sans);font-size:14px;color:var(--fg);max-width:340px;line-height:1.5;font-weight:300}
-.hero-tag strong{display:block;margin-bottom:.5rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;font-weight:400}
-.scroll-cue{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg);display:flex;align-items:center;gap:.7rem;animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.scroll-cue::before{content:"";width:1px;height:30px;background:linear-gradient(180deg,transparent,var(--fg))}
-
-.manifesto{padding:14rem 2.5rem}
-.manifesto-label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:3rem;display:flex;align-items:center;gap:1rem}
-.manifesto-label::before{content:"";width:40px;height:1px;background:var(--accent)}
-.manifesto h2{font-family:var(--serif);font-weight:200;font-size:clamp(2.5rem,7vw,8rem);line-height:.95;letter-spacing:-.02em;max-width:1400px;font-variation-settings:"opsz" 144,"SOFT" 100}
-.manifesto h2 em{font-style:italic;color:var(--accent);font-variation-settings:"opsz" 144,"SOFT" 0}
-.manifesto h2 .alt{display:block;color:var(--fg-dim);font-size:.45em;margin-top:1rem;font-style:italic;font-weight:300}
-.manifesto-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:2rem;margin-top:6rem}
-.manifesto-grid p{grid-column:span 5;font-size:1rem;line-height:1.7;color:var(--fg-dim)}
-.manifesto-grid p:first-child{grid-column-start:4}
-.manifesto-grid p:last-child{font-style:italic;font-family:var(--serif);font-size:1.05rem}
-
-.programs-head{display:flex;justify-content:space-between;align-items:flex-end;padding:0 2.5rem;margin-bottom:6rem;flex-wrap:wrap;gap:2rem}
-.programs-head h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.5rem,5vw,5rem);line-height:1;letter-spacing:-.02em;font-variation-settings:"opsz" 144,"SOFT" 60}
-.programs-head .count{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim);text-align:right}
-.programs-head .count strong{color:var(--accent);font-weight:400;display:block;font-size:14px;margin-bottom:.3rem}
-
-.programs{padding:0;min-height:auto;display:block;position:relative}
-.program{border-top:1px solid var(--line);padding:3rem 2.5rem;display:grid;grid-template-columns:80px 1fr 1fr 200px;gap:3rem;align-items:center;position:relative;transition:background .4s ease;cursor:none}
-.program:last-of-type{border-bottom:1px solid var(--line)}
-.program::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,rgba(111,229,210,.05),transparent);transition:width .6s cubic-bezier(.16,1,.3,1);z-index:-1}
-.program:hover::before{width:100%}
-.program:hover .p-num{color:var(--accent);transform:translateX(8px)}
-.program:hover .p-title{transform:translateX(12px)}
-.program:hover .p-arrow{opacity:1;transform:translateX(0) rotate(-45deg)}
-.p-num{font-family:var(--mono);font-size:14px;letter-spacing:.1em;color:var(--fg-faint);transition:color .4s,transform .4s;font-feature-settings:"tnum"}
-.p-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(1.8rem,3.5vw,3.5rem);line-height:1;letter-spacing:-.02em;transition:transform .4s ease;font-variation-settings:"opsz" 144,"SOFT" 50}
-.p-title .alt{display:block;font-style:normal;color:var(--fg-dim);font-size:.4em;margin-top:.6rem;font-family:var(--mono);letter-spacing:.15em;text-transform:uppercase;font-variation-settings:initial}
-.p-desc{font-size:.92rem;color:var(--fg-dim);line-height:1.6;max-width:380px}
-.p-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);transition:gap .3s}
-.p-link:hover{gap:1rem}
-.p-link::after{content:"↗";font-size:12px}
-.p-tags{display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
-.p-tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding:.3rem .7rem;border:1px solid var(--line);border-radius:99px}
-.p-tag.depth{color:var(--accent);border-color:rgba(111,229,210,.3)}
-.p-arrow{position:absolute;right:2.5rem;top:50%;transform:translate(-20px,-50%) rotate(-45deg);font-family:var(--mono);font-size:24px;color:var(--accent);opacity:0;transition:all .5s cubic-bezier(.16,1,.3,1)}
-.p-img-inline{display:none}
-
-.program-preview{position:fixed;pointer-events:none;z-index:8;width:min(520px,44vw);aspect-ratio:16/9;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.95);transition:opacity .4s ease,transform .6s cubic-bezier(.16,1,.3,1);border:1px solid var(--line-strong);box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.program-preview.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
-.program-preview img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
-.program-preview::after{content:attr(data-num);position:absolute;bottom:1rem;left:1rem;font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--fg);text-transform:uppercase;background:rgba(5,7,9,.7);padding:.4rem .7rem;backdrop-filter:blur(4px)}
-
-.marquee{padding:4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;min-height:auto;display:flex;align-items:center;background:var(--bg-soft)}
-.marquee-track{display:flex;gap:4rem;white-space:nowrap;animation:marquee 50s linear infinite;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.5rem,6vw,6rem);font-variation-settings:"opsz" 144,"SOFT" 100}
-.marquee-track span{display:inline-flex;align-items:center;gap:4rem;color:var(--fg)}
-.marquee-track span::after{content:"◇";color:var(--accent);font-size:.6em;font-style:normal}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.team{padding:14rem 2.5rem}
-.team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6rem;flex-wrap:wrap;gap:2rem}
-.team-head h3{font-family:var(--serif);font-weight:200;font-style:italic;font-size:clamp(2.5rem,7vw,8rem);line-height:.95;letter-spacing:-.02em;font-variation-settings:"opsz" 144,"SOFT" 80}
-.team-head h3 em{color:var(--accent)}
-.team-head .label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim)}
-.members{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.member{border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;min-height:520px;transition:border-color .4s;position:relative;overflow:hidden}
-.member:hover{border-color:var(--accent)}
-.member-photo{position:relative;overflow:hidden;background:var(--bg-soft)}
-.member-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.05) saturate(.85);transition:filter .6s ease,transform .8s ease}
-.member:hover .member-photo img{filter:grayscale(0) contrast(1.05) saturate(1);transform:scale(1.04)}
-.member-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,7,9,.5) 100%)}
-.member-body{padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between}
-.member-num{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:1rem}
-.member h4{font-family:var(--serif);font-weight:300;font-size:clamp(2.5rem,5vw,5rem);line-height:.9;letter-spacing:-.03em;font-variation-settings:"opsz" 144,"SOFT" 30}
-.member-role{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-top:1rem}
-.member-bio{font-size:.88rem;color:var(--fg-dim);line-height:1.65;margin-top:1.5rem}
-.member-quote{font-family:var(--serif);font-style:italic;color:var(--fg);font-size:1rem;margin-top:1.5rem;line-height:1.4;font-variation-settings:"opsz" 144,"SOFT" 100}
-.member-quote span{display:block;color:var(--fg-dim);font-size:.8em;margin-top:.4rem}
-
-.cta{padding:14rem 2.5rem;text-align:center;align-items:center;background:radial-gradient(ellipse at center,rgba(111,229,210,.04),transparent 70%)}
-.cta-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:3rem;display:flex;align-items:center;gap:1rem;justify-content:center}
-.cta-eyebrow::before,.cta-eyebrow::after{content:"";width:60px;height:1px;background:var(--accent)}
-.cta h3{font-family:var(--serif);font-weight:200;font-style:italic;font-size:clamp(3.5rem,12vw,14rem);line-height:.85;letter-spacing:-.04em;font-variation-settings:"opsz" 144,"SOFT" 100}
-.cta h3 em{color:var(--accent)}
-.cta-sub{margin-top:2rem;color:var(--fg-dim);max-width:540px;line-height:1.6}
-.cta-btn{display:inline-flex;align-items:center;gap:1rem;margin-top:4rem;padding:1.4rem 2.5rem;border:1px solid var(--accent);font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);position:relative;overflow:hidden;transition:color .4s ease}
-.cta-btn::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .5s cubic-bezier(.83,0,.17,1);z-index:-1}
-.cta-btn:hover{color:var(--bg)}
-.cta-btn:hover::before{transform:translateY(0)}
-.cta-btn::after{content:"→";display:inline-block;transition:transform .4s ease}
-.cta-btn:hover::after{transform:translateX(6px)}
-
-footer{border-top:1px solid var(--line);padding:4rem 2.5rem 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;position:relative;z-index:3;background:var(--bg)}
-footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:1.5rem}
-footer p,footer a{font-size:.9rem;color:var(--fg);line-height:1.7;font-weight:300}
-footer a:hover{color:var(--accent)}
-.footer-brand{font-family:var(--serif);font-style:italic;font-size:2.5rem;line-height:.95;font-variation-settings:"opsz" 144,"SOFT" 80}
-.footer-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:2rem;margin-top:2rem;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim)}
-
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s cubic-bezier(.16,1,.3,1)}
-.reveal.in{opacity:1;transform:none}
-
-[data-en]{display:none!important}
-html[data-lang="en"] [data-et]{display:none!important}
-html[data-lang="en"] [data-en]{display:inline!important}
-
-@media (max-width:900px){
-  body{cursor:auto}
-  .cursor-dot,.cursor-ring,.program-preview{display:none}
-  a,button,.program{cursor:pointer!important}
-  header.nav{padding:1rem 1.2rem}
-  .brand-text small{display:none}
-  nav.menu{display:none}
-  .depth{display:none}
-  section{padding:5rem 1.2rem}
-  .hero{padding-bottom:3rem}
-  .hero-meta{display:none}
-  .hero-corner{position:static;text-align:left;margin-bottom:1.5rem;margin-top:6rem;color:var(--accent)}
-  .hero h1{margin-left:0;font-size:clamp(3.5rem,18vw,7rem)}
-  .hero-foot{margin-left:0;flex-direction:column;align-items:flex-start}
-  .manifesto{padding:6rem 1.2rem}
-  .manifesto-grid p,.manifesto-grid p:first-child{grid-column:1/-1}
-  .programs-head{padding:0 1.2rem}
-  .program{grid-template-columns:1fr;gap:1rem;padding:2rem 1.2rem}
-  .p-img-inline{display:block;width:100%;height:240px;margin-bottom:1rem;overflow:hidden;border:1px solid var(--line)}
-  .p-img-inline img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
-  .p-tags{flex-direction:row;align-items:flex-start;flex-wrap:wrap;justify-content:flex-start}
-  .p-arrow{display:none}
-  .members{grid-template-columns:1fr;gap:1.5rem}
-  .member{grid-template-columns:1fr;min-height:auto}
-  .member-photo{height:320px}
-  .member-body{padding:2rem}
-  .team{padding:6rem 1.2rem}
-  .cta{padding:6rem 1.2rem}
-  footer{grid-template-columns:1fr;gap:2rem;padding:3rem 1.2rem 1.5rem}
-  .footer-bottom{flex-direction:column;gap:1rem}
-}
-</style>
 </head>
-<body>
+<body class="has-rail">
 
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
+<a class="skip-link" href="#sisu">Hüppa sisu juurde</a>
 
-<div class="program-preview" id="preview" data-num=""><img src="" alt="" /></div>
-
-<div class="loader" id="loader">
-  <div>
-    <div class="loader-num"><span id="depthCount">00</span><small>m</small></div>
-    <div class="loader-label" data-et>Sukeldumine algas</div>
-    <div class="loader-label" data-en>Descent initiated</div>
-    <div class="loader-bar"><div></div></div>
-  </div>
-</div>
-
-<canvas id="bg"></canvas>
-<div class="bg-grad"></div>
-
-<header class="nav">
-  <div class="brand">
-    <img src="assets/mgakalogoo.png" alt="Meregrupp Allvee Akadeemia logo" />
-    <div class="brand-text">
-      <span>Meregrupp</span>
-      <small><span data-et>Allvee Akadeemia</span><span data-en>Aquatic Academy</span></small>
-    </div>
-  </div>
-  <nav class="menu">
-    <a href="#programmid"><span data-et>Programmid</span><span data-en>Programs</span></a>
-    <a href="#meeskond"><span data-et>Meeskond</span><span data-en>Team</span></a>
-    <a href="#kontakt"><span data-et>Kontakt</span><span data-en>Contact</span></a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="assets/mgakalogoo.png" alt="Meregrupp Allvee Akadeemia logo" width="52" height="52" />
+    <span class="brand-text">Meregrupp<small>Allvee Akadeemia</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Peamenüü">
+    <a href="en/freediving/">Freediving</a>
+    <a href="#merineitsisport">Mermaid Sport</a>
+    <a href="#programmid">Akadeemia</a>
+    <a href="#meeskond">Ohutus &amp; meeskond</a>
+    <a href="#kontakt">Kontakt</a>
   </nav>
-  <div class="lang">
-    <button class="active" data-set="et">ET</button>
-    <span>/</span>
-    <button data-set="en">EN</button>
+  <div class="header-tools">
+    <nav class="lang-switch" aria-label="Keel">
+      <a href="/" aria-current="true" lang="et">ET</a>
+      <span aria-hidden="true">/</span>
+      <a href="en/" lang="en" hreflang="en">EN</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="en/freediving/#start">Alusta siit</a>
+    <details class="nav-drawer">
+      <summary aria-label="Ava menüü">Menüü</summary>
+      <div class="nav-drawer-panel">
+        <a href="en/freediving/">Freediving</a>
+        <a href="#merineitsisport">Mermaid Sport</a>
+        <a href="#programmid">Akadeemia</a>
+        <a href="#meeskond">Ohutus &amp; meeskond</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="en/" lang="en">In English</a>
+      </div>
+    </details>
   </div>
 </header>
 
-<div class="depth">
-  <div class="depth-current"><span id="depthLabel">00</span> m</div>
-  <div class="depth-line"><div></div></div>
-  <div>14 m</div>
+<!-- dekoratiivne sügavusriba; päris navigatsioon on .sections-nav -->
+<div class="depth-rail" aria-hidden="true">
+  <div class="depth-readout">00.0 m</div>
+  <div class="depth-scale"></div>
+  <div class="depth-surface-flag"></div>
 </div>
+<nav class="sections-nav" aria-label="Sektsioonid">
+  <ul>
+    <li><a href="#sisu">Avaleht</a></li>
+    <li><a href="#vabasukeldumine">Vabasukeldumine</a></li>
+    <li><a href="#merineitsisport">Merineitsisport</a></li>
+    <li><a href="#programmid">Programmid</a></li>
+    <li><a href="#meeskond">Meeskond</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
 
-<main>
+<main id="sisu">
 
-<section class="hero">
+<!-- 0 m — pind -->
+<section class="hero band" data-depth="0" aria-labelledby="hero-h1">
   <div class="hero-media">
-    <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
-      <source src="assets/hero.webm" type="video/webm">
-      <source src="assets/hero.mp4" type="video/mp4">
+    <video muted loop playsinline autoplay preload="metadata" poster="assets/hero-poster.jpg" tabindex="-1" aria-hidden="true">
+      <source src="assets/hero.webm" type="video/webm" />
+      <source src="assets/hero.mp4" type="video/mp4" />
     </video>
+    <img src="assets/hero-poster.jpg" alt="" hidden />
   </div>
-  <div class="hero-meta">EHIS 2145600 — MTÜ Meregrupp · Tallinn, EE</div>
-  <div class="hero-corner">
-    <span data-et>Päris treening.<br/>Päris meri.</span>
-    <span data-en>Real training.<br/>Real sea.</span>
-    <br/><span style="color:var(--accent)">↘ since 2018</span>
-  </div>
-  <div class="hero-content">
-    <h1>
-      <span class="l"><span data-et>Allvee</span><span data-en>Aquatic</span></span>
-      <span class="l"><span data-et><em>Akadeemia</em></span><span data-en><em>Academy</em></span></span>
-    </h1>
-    <div class="hero-foot">
-      <p class="hero-tag">
-        <strong data-et>Sukeldu sügavamale kui kunagi varem.</strong>
-        <strong data-en>Dive deeper than ever before.</strong>
-        <span data-et>Üheksa programmi vee all. Sertifitseeritud juhendajad, päris meri ja aastaringne treening.</span>
-        <span data-en>Nine programs. Real depth. Certified instructors, open sea, year-round training.</span>
-      </p>
-      <div class="scroll-cue"><span data-et>Sukeldu</span><span data-en>Descend</span></div>
+  <p class="hero-reg">EHIS 2145600 · MTÜ Meregrupp<br />Tallinn, EE · <span>since 2018</span></p>
+  <div class="inner">
+    <p class="hero-kicker">Meregrupp · Allvee Akadeemia</p>
+    <h1 id="hero-h1" class="display">Allvee <em>Akadeemia</em></h1>
+    <p class="hero-sub lede"><strong>Päris treening. Päris vesi. Üks hingetõmme.</strong><br />
+    Vabasukeldumise koolitused ja juhendatud sukeldumised Eestis — esmakordsele proovijale,
+    koolitatud vabasukeldujale ja neile, kes plaanivad oma järgmist külmaveeseiklust.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="en/freediving/#start">Alusta vabasukeldumist</a>
+      <a class="btn" href="en/freediving/#rummu">Sukeldu Rummu</a>
+      <a class="btn btn-quiet" href="en/freediving/#plan">Plaani reis</a>
     </div>
   </div>
 </section>
 
-<section class="manifesto">
-  <div class="manifesto-label reveal">
-    <span data-et>I — Manifest</span>
-    <span data-en>I — Manifesto</span>
-  </div>
-  <h2 class="reveal">
-    <span data-et>Ühest kohast <em>kõik</em><br/>veealused elamused.</span>
-    <span data-en>Every underwater<br/>experience in <em>one</em> place.</span>
-    <span class="alt" data-et>— ujumisest militaartreeninguni</span>
-    <span class="alt" data-en>— from first stroke to combat dive</span>
-  </h2>
-  <div class="manifesto-grid">
-    <p class="reveal" data-et>Ujumise algõpetus, vabasukeldumine, merineitsid, allveevõitlus, allveeskuutrid, MGVS militaarprogramm, koolitused vetelpäästjale ja apnoe stressitaluvuse arendamiseks ning allveefoto & film. Kõik see ühe katuse all.</p>
-    <p class="reveal" data-en>Swimming fundamentals, freediving, mermaids, underwater fights, scooters, MGVS military-style training, lifeguard and apnoea resilience courses, plus underwater photo & film. All of it under one roof.</p>
-    <p class="reveal" data-et>Pane end proovile või loo oma veealune fantaasiamaailm — meie hoiame distsipliini, ohutust ja sügavust.</p>
-    <p class="reveal" data-en>Test yourself or build your underwater fantasy world — we hold the discipline, the safety, and the depth.</p>
+<!-- 3 m — usaldusriba + kolme teekonna valik -->
+<section class="band bg-abyss-900" data-depth="3" aria-labelledby="rajad-h2">
+  <div class="inner">
+    <ul class="trust-strip reveal">
+      <li>Ingliskeelne koolitus</li>
+      <li>Ohutus ennekõike</li>
+      <li>Aastaringne treening</li>
+      <li>Tallinn + avavesi</li>
+      <li>Alates 2018</li>
+    </ul>
+    <div class="eyebrow" style="margin-top:3rem"><span>Vali oma rada</span> <span class="depth-mark">— 3 m</span></div>
+    <h2 id="rajad-h2">Kolm teed <em>vette</em> — vali see, mis vastab sinu tasemele</h2>
+    <div class="routes" style="margin-top:2.2rem">
+      <article class="route-card reveal">
+        <p class="readiness">0 m · kogemust pole vaja</p>
+        <h3>Start</h3>
+        <p class="fit">Olen vabasukeldumises uus.</p>
+        <p>Rahulik esimene kogemus basseinis ja teoorias, inglise keeles, ohutus ennekõike.</p>
+        <a class="btn" href="en/freediving/#start">Broneeri algus</a>
+        <a class="alt-link" href="en/freediving/#start">Loe, kas see sobib mulle →</a>
+      </article>
+      <article class="route-card reveal">
+        <p class="readiness">Sertifitseeritud · tingimustega</p>
+        <h3>Rummu</h3>
+        <p class="fit">Olen juba koolitatud vabasukelduja.</p>
+        <p>Juhendatud sukeldumine üleujutatud karjääris — ilmast ja tingimustest sõltuv kogemus.</p>
+        <a class="btn" href="en/freediving/#rummu">Kuupäevad ja sobivus</a>
+        <a class="alt-link" href="en/freediving/#rummu">Vaata tingimusi →</a>
+      </article>
+      <article class="route-card reveal">
+        <p class="readiness">6–12 kuud ette</p>
+        <h3>Plan Ahead</h3>
+        <p class="fit">Plaanin Eestit tulevaseks hooajaks.</p>
+        <p>Reisi, klubi või väikese grupi plaan kohaliku ohutuskeskse meeskonnaga.</p>
+        <a class="btn" href="en/freediving/#plan">Plaani kohaliku tiimiga</a>
+        <a class="alt-link" href="https://freedive.ee/#training">Vaata hooaegu →</a>
+      </article>
+    </div>
   </div>
 </section>
 
-<div id="programmid">
-<div class="programs-head reveal">
-  <h3><span data-et>Programmid</span><span data-en>Programs</span></h3>
-  <div class="count">
-    <strong>09</strong>
-    <span data-et>Üheksa rada<br/>läbi sügavuse</span>
-    <span data-en>Nine paths<br/>through the depth</span>
-  </div>
-</div>
-
-<section class="programs">
-
-  <div class="program" data-img="assets/swim-class-kids-and-adults.jpg" data-num="01">
-    <div class="p-img-inline"><img src="assets/swim-class-kids-and-adults.jpg" loading="lazy" decoding="async" alt="Ujumistreening lastele ja täiskasvanutele basseinis, Meregrupp Allvee Akadeemia" /></div>
-    <div class="p-num">→ 01</div>
-    <div class="p-title">
-      <span data-et>Ujumise algõpetus</span>
-      <span data-en>Swimming Fundamentals</span>
-      <span class="alt" data-et>Õpime ujuma · EUL metoodika</span>
-      <span class="alt" data-en>Learn to swim · ESU methodology</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Süsteemne ja lõbus tee algajast julge ujujani. Lastele ja täiskasvanutele, väikestes gruppides, personaalse tagasisidega.</span>
-      <span data-en>A structured, playful path from beginner to confident swimmer. For kids and adults, in small groups with personal feedback.</span>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">All levels</div><div class="p-tag">Pool</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/freediver-depth-blue.jpg" data-num="02">
-    <div class="p-img-inline"><img src="assets/freediver-depth-blue.jpg" loading="lazy" decoding="async" alt="Vabasukelduja laskumas sügavusse sinakas avavees, freediving Eesti" /></div>
-    <div class="p-num">→ 02</div>
-    <div class="p-title">
-      <span data-et>Vabasukeldumine</span>
-      <span data-en>Freediving</span>
-      <span class="alt" data-et>Üks hingetõmme · Tase 1 ja 2</span>
-      <span class="alt" data-en>One breath · Level 1 & 2</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Avasta veealune maailm ühe rahuliku hingetõmbega. Treenime avavees aastaringselt — ka jää all neile, kes julgevad.</span>
-      <span data-en>Explore the underwater world on one calm breath. Open-water training year-round — even under ice for those who dare.</span>
-      <a class="p-link" href="https://drive.proton.me/urls/M8F2AAT8A0#5fNBibvFBfhc" target="_blank" rel="noopener">
-        <span data-et>Tase 1 (180eur) programm</span><span data-en>Level 1 (180eur) program</span>
-      </a>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">→ 14 m</div><div class="p-tag">Year-round</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/mermaid-underwater-portrait.jpg" data-num="03">
-    <div class="p-img-inline"><img src="assets/mermaid-underwater-portrait.jpg" loading="lazy" decoding="async" alt="Merineitsi monolesega vee all, allveefotosessioon Meregrupp" /></div>
-    <div class="p-num">→ 03</div>
-    <div class="p-title">
-      <span data-et>Merineitsid</span>
-      <span data-en>Mermaids</span>
-      <span class="alt" data-et>Veealune muinasjutt · monolest</span>
-      <span class="alt" data-en>Underwater fairytale · monofin</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Sulpsa veealuse muinasjutu peategelaseks. Sabauimega ujumine, graatsiline liikumine ja professionaalsed allveefotosessioonid.</span>
-      <span data-en>Step into your own underwater fairytale. Monofin swimming, graceful movement and pro underwater photo sessions.</span>
-      <a class="p-link" href="https://drive.proton.me/urls/6HTAC4JC5G#NEaDD4GCTW1b" target="_blank" rel="noopener">
-        <span data-et>Tase 1 programm</span><span data-en>Level 1 program</span>
-      </a>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">Fantasy</div><div class="p-tag">Photo</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/underwater-fight-arena.jpg" data-num="04">
-    <div class="p-img-inline"><img src="assets/underwater-fight-arena.jpg" loading="lazy" decoding="async" alt="Allveevõitlus 3×3 meetri ujuvareenil, akvatlon kombineeritud võitluskunstidega" /></div>
-    <div class="p-num">→ 04</div>
-    <div class="p-title">
-      <span data-et>Allveevõitlus</span>
-      <span data-en>Underwater Fights</span>
-      <span class="alt" data-et>Veealune kungfu · 4×4 m areen</span>
-      <span class="alt" data-en>Water kung-fu · 4×4 m arena</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Akvatlon kohtub idamaiste võitluskunstidega. Kompaktne 4×4 m ujuvareen, üks hingetõmme, kaks võitlejat.</span>
-      <span data-en>Aquathlon meets Eastern martial arts. A compact 4×4 m floating arena, one breath, two fighters.</span>
-      <a class="p-link" href="https://drive.proton.me/urls/GQR4J3BMS0#F8u7d-c8RG52" target="_blank" rel="noopener">
-        <span data-et>Võistluse reeglid</span><span data-en>Competition rules</span>
-      </a>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">High intensity</div><div class="p-tag">Adv.</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/dpv-scooter-diver.jpg" data-num="05">
-    <div class="p-img-inline"><img src="assets/dpv-scooter-diver.jpg" loading="lazy" decoding="async"  alt="Sukelduja allveeskuutriga avavees, LEFEET DPV partner Meregrupp" /></div>
-    <div class="p-num">→ 05</div>
-    <div class="p-title">
-      <span data-et>Allveeskuutrid</span>
-      <span data-en>Underwater Scooters</span>
-      <span class="alt" data-et>James Bond · LEFEET partner</span>
-      <span class="alt" data-en>James Bond style · LEFEET partner</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Kompaktsed elektrilised DPV-d. Müük, rent ja hooldus. Snorkeldamine, sukeldumine ja SUP — järgmisel tasemel.</span>
-      <span data-en>Compact electric DPVs. Sales, rental and service. Snorkelling, diving, SUP — taken to the next level.</span>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">DPV</div><div class="p-tag">Sales · Rent</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/military-style-water-training.jpg" data-num="06">
-    <div class="p-img-inline"><img src="assets/military-style-water-training.jpg" loading="lazy" decoding="async" alt="MGVS militaartreening vees, allveeoperaatori ettevalmistus jõustruktuuridele" /></div>
-    <div class="p-num">→ 06</div>
-    <div class="p-title">
-      <span data-et>MGVS</span>
-      <span data-en>MGVS</span>
-      <span class="alt" data-et>Allveeoperaator · jõustruktuuridele</span>
-      <span class="alt" data-en>Underwater operator · for forces</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Erialaprogramm, mis viib füüsilise ja vaimse vastupidavuse piirini. Maa, vesi, vee all — meeskonnatöö ja distsipliin.</span>
-      <span data-en>A specialised program that pushes physical and mental limits. Land, water, underwater — teamwork and discipline.</span>
-      <a class="p-link" href="https://drive.proton.me/urls/6SAK0T2RJ0#38wFP9jbBVe7" target="_blank" rel="noopener">
-        <span data-et>Koolitusprogrammid</span><span data-en>Training programs</span>
-      </a>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">Military</div><div class="p-tag">By request</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/underwater-photo-session.jpg" data-num="07">
-    <div class="p-img-inline"><img src="assets/underwater-photo-session.jpg" loading="lazy" decoding="async" alt="Professionaalne allveefotosessioon, allveefoto ja film Meregrupp" /></div>
-    <div class="p-num">→ 07</div>
-    <div class="p-title">
-      <span data-et>Foto &amp; Film</span>
-      <span data-en>Photo &amp; Film</span>
-      <span class="alt" data-et>Allveefantaasia kaadrisse</span>
-      <span class="alt" data-en>Underwater fantasy on screen</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Merineitsi sessioonid, portreed, fantaasiaprojektid, muusikavideod ja reklaamid — kontseptsioonist lõpptulemuseni.</span>
-      <span data-en>Mermaid sessions, portraits, fantasy projects, music videos and commercials — from concept to final cut.</span>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">Studio</div><div class="p-tag">Open water</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-
-  <div class="program" data-img="assets/custom-training.jpg" data-num="08">
-    <div class="p-img-inline"><img src="assets/custom-training.jpg" loading="lazy" decoding="async" alt="Vetelpääste ja apnoe koolitus basseinis, sertifitseeritud juhendajad" /></div>
-    <div class="p-num">→ 08</div>
-    <div class="p-title">
-      <span data-et>Koolitused</span>
-      <span data-en>Training</span>
-      <span class="alt" data-et>Vetelpääste · apnoe · lühikursused</span>
-      <span class="alt" data-en>Lifeguard · apnoea · short courses</span>
-    </div>
-    <div class="p-desc">
-      <span data-et>Sihitud moodulid eraisikutele ja meeskondadele. Selge eesmärk, juhendatud harjutused, mõõdetav tulemus.</span>
-      <span data-en>Focused modules for individuals and teams. Clear objectives, instructor-led drills, measurable outcomes.</span>
-      <a class="p-link" href="https://drive.proton.me/urls/R5H4M5BFKW#JPo8wM-S6ssa" target="_blank" rel="noopener">
-        <span data-et>Basseinipääste programm</span><span data-en>Pool rescue program</span>
-      </a>
-    </div>
-    <div class="p-tags"><div class="p-tag depth">Cert.</div><div class="p-tag">B2B</div></div>
-    <div class="p-arrow">↗</div>
-  </div>
-</section>
-</div>
-
-<section class="marquee">
-  <div class="marquee-track">
-    <span>profondius</span><span>tranquillius</span><span>diutius</span>
-    <span>real sea</span><span>real training</span><span>nine programs</span><span>one breath</span>
-    <span>profondius</span><span>tranquillius</span><span>diutius</span>
-    <span>real sea</span><span>real training</span><span>nine programs</span><span>one breath</span>
-  </div>
-</section>
-
-<section class="team" id="meeskond">
-  <div class="team-head">
-    <h3>
-      <span data-et>Juhendajad,<br/>kes <em>sinuga sukelduvad</em></span>
-      <span data-en>Instructors who<br/><em>take you</em> down</span>
-    </h3>
-    <div class="label">
-      <span data-et>II — Personal</span>
-      <span data-en>II — Crew</span>
-    </div>
-  </div>
-
-  <div class="members">
-    <div class="member">
-      <div class="member-photo">
-        <img src="assets/taniel-direktor.jpg" loading="lazy" decoding="async" alt="Taniel, peatreener ja Allvee Akadeemia direktor, Master Freediver" />
+<!-- 6 m — freediving'u põhiplokk + Rummu -->
+<section id="vabasukeldumine" class="band bg-teal-950" data-depth="6" aria-labelledby="fd-h2">
+  <div class="inner">
+    <div class="eyebrow"><span>Vabasukeldumine</span> <span class="depth-mark">— 6 m</span></div>
+    <h2 id="fd-h2">Rahulik, distsiplineeritud, <em>ohutus ennekõike</em></h2>
+    <div class="panel-grid" style="margin-top:2.2rem">
+      <div>
+        <p>Vabasukeldumine ei ole meil ekstreemsport, vaid rahu ja tähelepanu treening.
+        Iga sessioon algab hingamisest ja lõdvestusest; sügavus tuleb tehnika, mitte
+        sundimise kaudu. Koolitus on saadaval inglise keeles ja juhendaja on vees sinuga.</p>
+        <p style="margin-top:1rem">Treenime Tallinnas basseinis ja avavees, aastaringselt —
+        talvel jää all neile, kes on selleks valmis ja juhendatud.</p>
+        <p style="margin-top:1.4rem"><a class="btn btn-primary" href="en/freediving/">Vaata vabasukeldumise radu</a></p>
       </div>
-      <div class="member-body">
-        <div>
-          <div class="member-num">→ 01 / Direktor / Director</div>
-          <h4>Taniel</h4>
-          <div class="member-role">
-            <span data-et>Peatreener · Akadeemia direktor</span>
-            <span data-en>Head Coach · Academy Director</span>
-          </div>
-          <p class="member-bio">
-            <span data-et>Kogenud peatreener, kelle tugevuseks on selge süsteem, rahulik juhtimine ja kõrge ohutuskultuur. Taustaks: võitlussukelduja kursus (Merekaitseliit), Master Freediver, Public Safety Diver, OPITO BOSIET / HUET, registreeritud med õde. Iga treening on sisuline, turvaline ja sihiga.</span>
-            <span data-en>An experienced head coach with a strong system, calm leadership and uncompromising safety culture. Background: Combat Diver (Maritime Defence League), Master Freediver, Public Safety Diver, OPITO BOSIET / HUET, registered nurse. Every session is purposeful, safe and on target.</span>
-          </p>
-        </div>
-        <div class="member-quote">
-          “et see vesi<br/>ikka vajuks<br/>ja vajuks<br/>ja vajuks”
-          <span>— manifest</span>
-        </div>
-      </div>
+      <figure class="figure-panel reveal">
+        <img src="assets/freediver-depth-blue.jpg" loading="lazy" decoding="async" width="800" height="450" alt="Vabasukelduja laskumas sügavusse sinakas avavees, freediving Eesti" />
+        <figcaption>Avavesi · aastaringne treening</figcaption>
+      </figure>
     </div>
 
-    <div class="member">
-      <div class="member-photo">
-        <img src="assets/ilona_intruktor.jpg" loading="lazy" decoding="async" alt="Ilona, freediving instruktor ja ohutuse spetsialist Meregrupis" />
-      </div>
-      <div class="member-body">
-        <div>
-          <div class="member-num">→ 02 / Instruktor / Instructor</div>
-          <h4>Ilona</h4>
-          <div class="member-role">
-            <span data-et>Freediving instruktor · ohutus</span>
-            <span data-en>Freediving instructor · safety</span>
-          </div>
-          <p class="member-bio">
-            <span data-et>Sõbralik ja rahulik instruktor, kelle juhendamisstiil on selge, toetav ja ohutusele keskenduv. Pädevused: Freediving Tase 1 &amp; 2, esmaabi, muinasvrakile sukelduja, töökeskkonna spetsialist. Iga treening — tulemuslik, turvaline ja hea energiaga.</span>
-            <span data-en>A friendly, calm instructor with a clear, supportive, safety-first style. Qualifications: Freediving Level 1 &amp; 2, First Aid, Ancient Shipwreck Diver, Occupational Safety Specialist. Every session — effective, safe, high in energy.</span>
-          </p>
-        </div>
-        <div class="member-quote">
-          profondius<br/>tranquillius<br/>diutius
-          <span>— deeper · calmer · longer</span>
-        </div>
+    <div class="panel-grid" style="margin-top:3rem">
+      <figure class="figure-panel reveal">
+        <img src="assets/hero-underwater-squad.jpg" loading="lazy" decoding="async" width="800" height="450" alt="Vabasukeldujate grupp vee all juhendaja saatel" />
+        <figcaption>Rummu · juhendatud kogemus</figcaption>
+      </figure>
+      <div>
+        <div class="eyebrow"><span>Eesti / Rummu</span></div>
+        <h3>Üleujutatud karjäär, mis jäi nii, nagu ta oli</h3>
+        <p style="margin-top:1rem">Rummu on juhendatud ja <strong>tingimuslik</strong> kogemus
+        koolitatud vabasukeldujale: ilm, vee temperatuur, nähtavus ja ligipääs muutuvad ning
+        lõpliku otsuse teeb guide kohapeal. Me ei luba nähtavust, sügavust ega ilma — me
+        lubame juhendamist ja ohutusprotsessi.</p>
+        <p style="margin-top:1rem"><span class="flag-conditional">Ilmast sõltuv · go/no-go otsustab guide</span></p>
+        <p style="margin-top:1.4rem"><a class="btn" href="en/freediving/#rummu">Explore Rummu</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta" id="kontakt">
-  <div class="cta-eyebrow">
-    <span data-et>III — Sinu sukeldumine algab</span>
-    <span data-en>III — Your dive begins</span>
+<!-- 9 m — Mermaid Sport teaser (pearl on karantiinis siin) -->
+<section id="merineitsisport" class="band mermaid-block" data-depth="9" aria-labelledby="mm-h2">
+  <div class="inner">
+    <div class="eyebrow"><span>Mermaid Sport</span> <span class="depth-mark">— 9 m</span></div>
+    <div class="panel-grid">
+      <div>
+        <h2 id="mm-h2">Merineitsisport jõuab <em>sügisel</em> Meregruppi</h2>
+        <p style="margin-top:1.2rem">Tehnika, liikumine ja enesekindlus vee all — mitte ainult
+        kostüüm. Sabauimega ujumine on omaette distsipliin, mille aluseks on sama rahulik
+        hingamis- ja veetunnetustreening, millel seisab kogu akadeemia.</p>
+        <p style="margin-top:1.4rem">
+          <a class="btn" href="mailto:meregrupp@gmail.com?subject=Mermaid%20Sport%20launch%20list&amp;body=Soovin%20liituda%20Mermaid%20Sport%20lansseerimise%20nimekirjaga.%20%2F%20Please%20add%20me%20to%20the%20Mermaid%20Sport%20launch%20list.%0A%0ANimi%20%2F%20Name%3A%20"
+             onclick="window.mgTrack&&mgTrack('join_waitlist',{list_type:'mermaid_launch',language:'et'})">Liitu lansseerimise nimekirjaga</a>
+        </p>
+        <p class="small muted" style="margin-top:.8rem">Nimekiri avaneb e-kirjaga sinu enda meilikliendist — eraldi vormi veel ei ole.</p>
+      </div>
+      <figure class="figure-panel reveal">
+        <img src="assets/mermaid-underwater-portrait.jpg" loading="lazy" decoding="async" width="1280" height="720" alt="Merineitsi monolesega vee all, allveefotosessioon Meregrupp" />
+        <figcaption>Merineitsid · tehnika ja liikumine</figcaption>
+      </figure>
+    </div>
   </div>
-  <h3>
-    <span data-et><em>Sukeldu</em><br/>seiklusesse.</span>
-    <span data-en><em>Dive</em><br/>into adventure.</span>
-  </h3>
-  <p class="cta-sub">
-    <span data-et>Programmiga liitumiseks või küsimuste korral kirjuta meile otse. Tooted (merineitsi varustus, allveeskuutrid jms) tellitakse e-kirja teel.</span>
-    <span data-en>To join a program or ask anything, write to us directly. Products (mermaid gear, scooters etc.) are ordered by e-mail.</span>
-  </p>
-  <a href="mailto:allveeakadeemia@meregrupp.ee" class="cta-btn">
-    <span data-et>Broneeri treening</span>
-    <span data-en>Book a session</span>
-  </a>
+</section>
+
+<!-- 12 m — Allvee Akadeemia ulatus -->
+<section id="programmid" class="band bg-teal-900" data-depth="12" aria-labelledby="pr-h2">
+  <div class="inner">
+    <div class="eyebrow"><span>Allvee Akadeemia</span> <span class="depth-mark">— 12 m</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
+      <h2 id="pr-h2">Programmid — <em>ujumisest</em> militaartreeninguni</h2>
+      <p class="mono muted"><span data-program-count>08</span> rada läbi sügavuse</p>
+    </div>
+    <div class="program-list" style="margin-top:2.2rem">
+
+      <a class="program-row reveal" href="mailto:meregrupp@gmail.com?subject=Ujumise%20alg%C3%B5petus">
+        <span class="num">01</span>
+        <span class="name">Ujumise algõpetus<small>Õpime ujuma · EUL metoodika</small></span>
+        <span class="desc">Süsteemne ja lõbus tee algajast julge ujujani. Lastele ja täiskasvanutele, väikestes gruppides.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="en/freediving/">
+        <span class="num">02</span>
+        <span class="name">Vabasukeldumine<small>Üks hingetõmme · Start / Rummu / Plan Ahead</small></span>
+        <span class="desc">Avasta veealune maailm ühe rahuliku hingetõmbega. Kursused, Rummu ja reisiplaan — vaata radu.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="https://drive.proton.me/urls/6HTAC4JC5G#NEaDD4GCTW1b" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span class="name">Merineitsid<small>Veealune muinasjutt · monolest</small></span>
+        <span class="desc">Sabauimega ujumine, graatsiline liikumine ja professionaalsed allveefotosessioonid. Tase 1 programm (PDF).</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="https://drive.proton.me/urls/GQR4J3BMS0#F8u7d-c8RG52" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <span class="name">Allveevõitlus<small>Akvatlon · ujuvareen</small></span>
+        <span class="desc">Akvatlon kohtub idamaiste võitluskunstidega. Ujuvareen, üks hingetõmme, kaks võitlejat. Võistlusreeglid (PDF).</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="mailto:meregrupp@gmail.com?subject=Allveeskuutrid%20(DPV)">
+        <span class="num">05</span>
+        <span class="name">Allveeskuutrid<small>LEFEET partner · müük ja rent</small></span>
+        <span class="desc">Kompaktsed elektrilised DPV-d. Müük, rent ja hooldus. Snorkeldamine, sukeldumine ja SUP — järgmisel tasemel.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="https://drive.proton.me/urls/6SAK0T2RJ0#38wFP9jbBVe7" target="_blank" rel="noopener">
+        <span class="num">06</span>
+        <span class="name">MGVS<small>Allveeoperaator · jõustruktuuridele</small></span>
+        <span class="desc">Erialaprogramm, mis viib füüsilise ja vaimse vastupidavuse piirini. Koolitusprogrammid (PDF).</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="mailto:meregrupp@gmail.com?subject=Allveefoto%20%26%20Film">
+        <span class="num">07</span>
+        <span class="name">Foto &amp; Film<small>Allveefantaasia kaadrisse</small></span>
+        <span class="desc">Merineitsi sessioonid, portreed, fantaasiaprojektid, muusikavideod ja reklaamid — kontseptsioonist lõpptulemuseni.</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="program-row reveal" href="https://drive.proton.me/urls/R5H4M5BFKW#JPo8wM-S6ssa" target="_blank" rel="noopener">
+        <span class="num">08</span>
+        <span class="name">Koolitused<small>Vetelpääste · apnoe · lühikursused</small></span>
+        <span class="desc">Sihitud moodulid eraisikutele ja meeskondadele. Selge eesmärk, mõõdetav tulemus. Basseinipääste programm (PDF).</span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+    <p class="small muted" style="margin-top:1rem">Programmide arv tuleb loendist — iga rida on päris programm, mida saab küsida e-kirjaga.</p>
+  </div>
+</section>
+
+<!-- 14 m — ohutus + meeskond (sügavaim punkt, kattub vana 14 m märgiga) -->
+<section id="meeskond" class="band bg-abyss-950" data-depth="14" aria-labelledby="tm-h2">
+  <div class="inner">
+    <div class="eyebrow"><span>Ohutus &amp; meeskond</span> <span class="depth-mark">— 14 m</span></div>
+    <h2 id="tm-h2">Juhendajad, kes <em>sinuga sukelduvad</em></h2>
+    <p style="margin-top:1.2rem" class="muted">Ohutus ei ole meil lisateenus, vaid iga treeningu
+    struktuur: buddy-põhimõte, pinnavalve, selged käemärgid ja juhendaja, kes on vees, mitte
+    kaldal. Kõik allpool loetletud pädevused on need, mida meeskond ise avaldab.</p>
+
+    <div class="members" style="margin-top:2.4rem">
+      <article class="member reveal">
+        <div class="member-photo">
+          <img src="assets/taniel-direktor.jpg" loading="lazy" decoding="async" width="1024" height="683" alt="Taniel, peatreener ja Allvee Akadeemia direktor, Master Freediver" />
+        </div>
+        <div class="member-body">
+          <p class="mono muted">→ 01 / Direktor</p>
+          <h3>Taniel</h3>
+          <p class="member-role">Peatreener · Akadeemia direktor</p>
+          <p class="member-bio">Kogenud peatreener, kelle tugevuseks on selge süsteem, rahulik
+          juhtimine ja kõrge ohutuskultuur. Taustaks: võitlussukelduja kursus (Merekaitseliit),
+          Master Freediver, Public Safety Diver, OPITO BOSIET / HUET, registreeritud med õde.
+          Keeled: eesti, inglise.</p>
+          <p class="member-quote">„et see vesi ikka vajuks ja vajuks ja vajuks"<span>— manifest</span></p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="member-photo">
+          <img src="assets/ilona_intruktor.jpg" loading="lazy" decoding="async" width="1024" height="622" alt="Ilona, freediving instruktor ja ohutuse spetsialist Meregrupis" />
+        </div>
+        <div class="member-body">
+          <p class="mono muted">→ 02 / Instruktor</p>
+          <h3>Ilona</h3>
+          <p class="member-role">Freediving instruktor · ohutus</p>
+          <p class="member-bio">Sõbralik ja rahulik instruktor, kelle juhendamisstiil on selge,
+          toetav ja ohutusele keskenduv. Pädevused: Freediving Tase 1 &amp; 2, esmaabi,
+          muinasvrakile sukelduja, töökeskkonna spetsialist. Keeled: eesti, inglise.</p>
+          <p class="member-quote">profondius · tranquillius · diutius<span>— sügavamale · rahulikumalt · kauem</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- tagasi pinnale — kontakt -->
+<section id="kontakt" class="band bg-abyss-900" data-depth="0" aria-labelledby="ct-h2">
+  <div class="inner">
+    <div class="eyebrow"><span>Sinu sukeldumine algab</span> <span class="depth-mark">↑ pind</span></div>
+    <h2 id="ct-h2" class="display"><em>Sukeldu</em> seiklusesse</h2>
+    <p style="margin-top:1.4rem" class="lede">Vali rada — või kirjuta meile otse, kui sa ei tea veel, milline tee on sinu oma.</p>
+    <div class="routes" style="margin-top:2.2rem">
+      <article class="route-card">
+        <p class="readiness">0 m · kogemust pole vaja</p>
+        <h3>Start</h3>
+        <a class="btn" href="en/freediving/#start">Alusta vabasukeldumist</a>
+      </article>
+      <article class="route-card">
+        <p class="readiness">Sertifitseeritud · tingimustega</p>
+        <h3>Rummu</h3>
+        <a class="btn" href="en/freediving/#rummu">Sukeldu Rummu</a>
+      </article>
+      <article class="route-card">
+        <p class="readiness">6–12 kuud ette</p>
+        <h3>Plan Ahead</h3>
+        <a class="btn" href="en/freediving/#plan">Plaani reis</a>
+      </article>
+    </div>
+    <p style="margin-top:2.4rem">
+      <a class="btn btn-primary" href="mailto:meregrupp@gmail.com">Kirjuta meile</a>
+    </p>
+    <p class="small" style="margin-top:.8rem"><a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a></p>
+    <p class="small muted" style="margin-top:.4rem">Tooted (merineitsi varustus, allveeskuutrid jm) tellitakse e-kirja teel.</p>
+  </div>
 </section>
 
 </main>
 
-<footer>
-  <div>
-    <div class="footer-brand">
-      <em>Allvee Akadeemia</em><br/>
-      <span style="font-size:1rem;font-style:normal;font-family:var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim)">meregrupp</span>
+<footer class="site-footer">
+  <div class="inner">
+    <div>
+      <p class="footer-brand"><em>Allvee Akadeemia</em><small>Meregrupp</small></p>
+    </div>
+    <div>
+      <h2>Kontakt</h2>
+      <p><a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a></p>
+      <p><a href="tel:+3725105573">+372 510 5573</a></p>
+      <p><a href="https://www.facebook.com/meregrupp" target="_blank" rel="noopener">Facebook ↗</a></p>
+    </div>
+    <div>
+      <h2>Aadress</h2>
+      <p>Kauri tee 12-5<br />Alliku küla, Saue vald<br />Harju maakond, 76401<br />Eesti</p>
+    </div>
+    <div>
+      <h2>Register</h2>
+      <p>Allvee Akadeemia<br />EHIS ID: 2145600<br />MTÜ Meregrupp<br />Reg: 80390699</p>
+    </div>
+    <div>
+      <h2>Domeenid</h2>
+      <p><a href="/">meregrupp.ee</a> — katusportaal</p>
+      <p><a href="en/freediving/">freediving</a> — kursused ja broneerimine</p>
+      <p><a href="https://freedive.ee">freedive.ee</a> — sihtkohavärav (EN)</p>
     </div>
   </div>
-  <div>
-    <h5>Kontakt / Contact</h5>
-    <p><a href="mailto:allveeakadeemia@meregrupp.ee">allveeakadeemia@meregrupp.ee</a></p>
-    <p><a href="tel:+3725105573">+372 5105573</a></p>
-    <p><a href="https://www.facebook.com/meregrupp" target="_blank" rel="noopener">Facebook ↗</a></p>
-  </div>
-  <div>
-    <h5>Aadress / Address</h5>
-    <p>Kauri tee 12-5<br/>Alliku küla, Saue vald<br/>Harju maakond<br/>Eesti</p>
-  </div>
-  <div>
-    <h5>Registry</h5>
-    <p>Allvee Akadeemia<br/>EHIS ID: 2145600<br/>MTÜ Meregrupp<br/>Reg: 80390699</p>
-  </div>
   <div class="footer-bottom">
-    <span>© <span id="yr"></span> Meregrupp · Allvee Akadeemia / Aquatic Academy</span>
+    <span>© <span id="yr">2026</span> Meregrupp · Allvee Akadeemia / Aquatic Academy</span>
     <span>meregrupp.ee · freedive.ee · merehunt.ee</span>
   </div>
 </footer>
 
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-(function(){
-  if(window.innerWidth < 900) return;
-  const dot = document.querySelector('.cursor-dot');
-  const ring = document.querySelector('.cursor-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{
-    mx=e.clientX;my=e.clientY;
-    dot.style.left=mx+'px';dot.style.top=my+'px';
-  });
-  (function loop(){
-    rx+=(mx-rx)*.18;ry+=(my-ry)*.18;
-    ring.style.left=rx+'px';ring.style.top=ry+'px';
-    requestAnimationFrame(loop);
-  })();
-  document.querySelectorAll('a,button').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
-  });
-})();
-
-(function(){
-  const loader = document.getElementById('loader');
-  const num = document.getElementById('depthCount');
-  const bar = document.querySelector('.loader-bar > div');
-  let d = 0; const target = 14;
-  const tick = ()=>{
-    d += 0.35 + Math.random()*.4;
-    if(d >= target) d = target;
-    num.textContent = d.toFixed(2).padStart(5,'0');
-    bar.style.width = (d/target*100)+'%';
-    if(d < target) requestAnimationFrame(tick);
-    else setTimeout(()=>{
-      loader.classList.add('done');
-      document.body.style.overflow='auto';
-    }, 600);
-  };
-  document.body.style.overflow='hidden';
-  setTimeout(tick, 300);
-})();
-
-(function(){
-  const c = document.getElementById('bg');
-  const ctx = c.getContext('2d');
-  let w,h,particles=[];
-  const N = window.innerWidth < 900 ? 40 : 90;
-  function resize(){
-    w = c.width = window.innerWidth * devicePixelRatio;
-    h = c.height = window.innerHeight * devicePixelRatio;
-    c.style.width = window.innerWidth+'px';
-    c.style.height = window.innerHeight+'px';
-  }
-  function init(){
-    particles = [];
-    for(let i=0;i<N;i++){
-      particles.push({
-        x: Math.random()*w, y: Math.random()*h,
-        r: (Math.random()*1.4 + .3) * devicePixelRatio,
-        vy: (Math.random()*.25 + .05) * devicePixelRatio,
-        vx: (Math.random()-.5) * .15 * devicePixelRatio,
-        a: Math.random()*.5 + .1,
-        twinkle: Math.random()*Math.PI*2,
-      });
-    }
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    for(const p of particles){
-      p.x += p.vx; p.y += p.vy; p.twinkle += .015;
-      const alpha = p.a * (.5 + ((Math.sin(p.twinkle)+1)/2)*.5);
-      if(p.y > h + 10){ p.y = -10; p.x = Math.random()*w; }
-      if(p.x > w + 10) p.x = -10;
-      if(p.x < -10) p.x = w+10;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = `rgba(232,228,216,${alpha})`; ctx.fill();
-      if(p.r > 1.5*devicePixelRatio){
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
-        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3);
-        g.addColorStop(0,`rgba(111,229,210,${alpha*.3})`);
-        g.addColorStop(1,'rgba(111,229,210,0)');
-        ctx.fillStyle = g; ctx.fill();
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  resize(); init(); draw();
-  window.addEventListener('resize',()=>{resize();init();});
-})();
-
-(function(){
-  const fill = document.querySelector('.depth-line > div');
-  const label = document.getElementById('depthLabel');
-  function update(){
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const p = Math.min(1, window.scrollY / max);
-    fill.style.height = (p*100)+'%';
-    label.textContent = (Math.round(p*14*10)/10).toFixed(1).padStart(4,'0');
-  }
-  window.addEventListener('scroll',update,{passive:true});
-  update();
-})();
-
-(function(){
-  document.querySelectorAll('.program, .member').forEach(el=>el.classList.add('reveal'));
-  const all = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  },{threshold:.12});
-  all.forEach(el=>io.observe(el));
-})();
-
-(function(){
-  const root = document.documentElement;
-  document.querySelectorAll('.lang button').forEach(b=>{
-    b.addEventListener('click',()=>{
-      root.setAttribute('data-lang', b.dataset.set);
-      root.setAttribute('lang', b.dataset.set);
-      document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('active', x===b));
-    });
-  });
-})();
-
-(function(){
-  if(window.innerWidth < 900) return;
-  const preview = document.getElementById('preview');
-  const previewImg = preview.querySelector('img');
-  let mx=0,my=0,px=0,py=0;
-  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; });
-  (function followLoop(){
-    px += (mx-px)*.12; py += (my-py)*.12;
-    const hw = preview.offsetWidth/2 + 12, hh = preview.offsetHeight/2 + 12;
-    preview.style.left = Math.min(Math.max(px, hw), window.innerWidth  - hw)+'px';
-    preview.style.top  = Math.min(Math.max(py, hh), window.innerHeight - hh)+'px';
-    requestAnimationFrame(followLoop);
-  })();
-
-  document.querySelectorAll('.program').forEach(p=>{
-    const img = p.dataset.img;
-    const num = p.dataset.num;
-    p.querySelector('.p-title').addEventListener('mouseenter',()=>{
-      previewImg.src = img;
-      preview.dataset.num = 'Program ' + num;
-      preview.classList.add('show');
-      document.body.classList.add('cursor-hover');
-    });
-    p.querySelector('.p-title').addEventListener('mouseleave',()=>{
-      preview.classList.remove('show');
-      document.body.classList.remove('cursor-hover');
-    });
-    p.addEventListener('mouseleave',()=>{
-      preview.classList.remove('show');
-      document.body.classList.remove('cursor-hover');
-      const title = p.querySelector('.p-title');
-      title.style.transform = '';
-    });
-    p.addEventListener('mousemove',(e)=>{
-      const rect = p.getBoundingClientRect();
-      const dx = (e.clientX - rect.left) / rect.width - .5;
-      const title = p.querySelector('.p-title');
-      title.style.transform = `translateX(${dx*8 + 12}px)`;
-    });
-  });
-})();
-</script>
-<noscript>
-  <style>.loader{display:none}body{overflow:auto}</style>
-</noscript>
+<script src="assets/js/analytics.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script>document.addEventListener('DOMContentLoaded',function(){var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();});</script>
 </body>
 </html>

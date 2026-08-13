@@ -1,0 +1,12 @@
+vana_url,uus_url,vastusekood,põhjendus,avastamise_allikas,kontrolli_tulemus
+https://meregrupp.ee/,https://meregrupp.ee/,200,root jääb ET canonical'iks; sisu uueneb samal URL-il,sitemap + live,OK — sama URL; redirect'i pole vaja
+https://meregrupp.ee/et/,https://meregrupp.ee/,404,"prompti §9 skeem näeb ette /et/ → 301 → /, kuid /et/ pole kunagi eksisteerinud ega ole kuhugi lingitud, ja GitHub Pages ei toeta server-301-e. Pseudo-redirecti (meta-refresh) loomine oleks §6.1 vastane soft-muster. Otsus: /et/ jääb päris 404-ks; kui sait kolib hostingule mis toetab 301-e, lisada seal",prompti keelemudel,kontrollitud — URL-i pole kunagi olnud üheski allikas
+https://meregrupp.ee/#programmid,https://meregrupp.ee/#programmid,200,fragment ei jõua serverisse; id säilitatud uuel lehel,menüü,OK — id olemas uues index.html-is
+https://meregrupp.ee/#meeskond,https://meregrupp.ee/#meeskond,200,id säilitatud,menüü,OK
+https://meregrupp.ee/#kontakt,https://meregrupp.ee/#kontakt,200,id säilitatud,menüü,OK
+https://freedive.ee/,https://freedive.ee/,200,juur jääb 200-ks — sihtkohavärav; kogu domeeni EI suunata meregrupp.ee-le (§6.2),live,staging valmis; cutover omaniku otsusel
+https://freedive.ee/#courses,https://meregrupp.ee/en/freediving/#start,fragmendikaardistus JS-is,kursusesisu kolib Vaatele B; fragment kaardistatakse kliendipoolselt location.replace'iga,freedive.ee menüü,teostatud freedive-ee/index.html fragmendikaardistuses
+https://freedive.ee/#method,https://freedive.ee/#method,200,metoodikasisu säilib väravas; id säilitatud,freedive.ee menüü,OK staging'us
+https://freedive.ee/#training,https://freedive.ee/#training,200,treening/hooajad säilivad väravas; id säilitatud,freedive.ee menüü,OK staging'us
+https://freedive.ee/#youth,https://freedive.ee/#contact,fragmendikaardistus JS-is,alla-16 tabel eemaldatud kuni omaniku otsuseni AIDA-omistuse kohta (§3.6); lähim sisuline vaste on kontakt/küsimus,freedive.ee menüü,teostatud fragmendikaardistuses
+https://freedive.ee/#contact,https://freedive.ee/#contact,200,id säilitatud,freedive.ee menüü,OK staging'us

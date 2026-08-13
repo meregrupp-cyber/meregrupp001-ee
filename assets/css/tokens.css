@@ -1,0 +1,58 @@
+/* Meregrupp / Allvee Akadeemia — disainitokenid.
+   Ainus fail, kus tohivad olla toored värviväärtused (vt docs/design-plan.md).
+   Kontrastisuhted mõõdetud docs/design-plan.md §3. */
+:root {
+  /* põhi — mustjassinine */
+  --abyss-1000:    #030b13;
+  --abyss-950:     #06131d;  /* peamine taust */
+  --abyss-900:     #081b27;
+  --abyss-800:     #0b2734;
+
+  /* mustjas siniroheline — sügavusribad */
+  --deep-teal-950: #062326;
+  --deep-teal-900: #083338;
+  --deep-teal-800: #0b454a;
+
+  /* aktsent — ainult CTA, aktiivne olek, sügavusriba, fookus */
+  --aqua-400:      #55d6cc;
+  --aqua-300:      #79e1d7;
+  --aqua-700:      #1e6e62;  /* rahulikud jooned / rest-olek (fookus kasutab aqua-400, vt design-plan §3) */
+
+  /* tekst */
+  --foam-100:      #eef3ee;  /* põhitekst */
+  --muted-blue:    #91a9b6;  /* teisene tekst, allkirjad */
+
+  /* struktuur */
+  --line-dark:     rgba(174, 218, 218, 0.18);
+  --line-faint:    rgba(174, 218, 218, 0.09);
+
+  /* eriotstarve */
+  --pearl-300:     #cbb7c9;  /* AINULT Mermaid Sport plokk */
+  --warn-400:      #e8b45a;  /* ilmast sõltuv, tingimuslik, kinnitamata */
+
+  /* pildi-overlay — puhas must lubatud ainult overlay'na (§7.2) */
+  --ink-overlay:   rgba(0, 0, 0, 0.45);
+
+  /* kirjad */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* skaala: ~1.25 mobiilis → ~1.333 desktopil (clamp) */
+  --fs-body:   clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);   /* 17–18 px */
+  --fs-small:  clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
+  --fs-mono:   clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --fs-h3:     clamp(1.33rem, 1.2rem + 0.9vw, 2rem);
+  --fs-h2:     clamp(1.66rem, 1.4rem + 1.8vw, 2.66rem);
+  --fs-h1:     clamp(2.07rem, 1.6rem + 3.2vw, 3.55rem);
+  --fs-hero:   clamp(2.6rem, 1.8rem + 5.5vw, 5.6rem);
+
+  /* rütm */
+  --section-pad: clamp(4.5rem, 10vh, 8rem);
+  --gutter: clamp(1.2rem, 4vw, 2.5rem);
+  --content-max: 1200px;
+  --measure: 68ch;
+
+  /* rail */
+  --rail-w: 3.4rem;
+}
