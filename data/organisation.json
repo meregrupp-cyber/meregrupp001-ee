@@ -1,0 +1,34 @@
+{
+  "legal_name": "MTÜ Meregrupp",
+  "brand_et": "Allvee Akadeemia",
+  "brand_en": "Aquatic Academy",
+  "ehis_id": "2145600",
+  "reg_code": "80390699",
+  "founding_year": 2018,
+  "email": "allveeakadeemia@meregrupp.ee",
+  "email_note": "needs_confirmation: kolm varianti ringluses (vt docs/nap-inconsistencies.md); kuni otsuseni kasutatakse põhisaidi senist avalikku aadressi",
+  "phone": "+372 510 5573",
+  "phone_href": "+3725105573",
+  "address": {
+    "street": "Kauri tee 12-5",
+    "locality": "Alliku küla, Saue vald",
+    "region": "Harju maakond",
+    "postal_code": "76401",
+    "country": "EE"
+  },
+  "geo": { "region": "EE-37", "placename": "Tallinn" },
+  "training_locations_et": "Tallinn — bassein ja avavesi",
+  "training_locations_en": "Tallinn — pool and open water",
+  "languages": ["et", "en"],
+  "social": {
+    "facebook": "https://www.facebook.com/meregrupp"
+  },
+  "domains": {
+    "portal": "https://meregrupp.ee",
+    "freediving": "https://meregrupp.ee/en/freediving/",
+    "gateway": "https://freedive.ee",
+    "other": "https://merehunt.ee"
+  },
+  "fb_app_id": "1281329930736127",
+  "organization_jsonld_id": "https://meregrupp.ee/#organization"
+}

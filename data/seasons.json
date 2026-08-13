@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "note": "Vaate C kuupõhine hooajatabel. Iga numbriline väärtus on needs_confirmation kuni omanik kinnitab (§11.4): väljamõeldud veetemperatuure ei avaldata. UI renderdab numbrid ALLES fact_status: confirmed korral; seni näitab leht ainult kvalitatiivset kirjeldust, mis on juba avalikult freedive.ee-l (aastaringne, sh talvine/jää-alune treening).",
+    "fact_status": "needs_confirmation",
+    "last_reviewed": "2026-08-13",
+    "reviewed_by": "claude-code-audit (mitte omanik)"
+  },
+  "qualitative_confirmed": {
+    "year_round_training": true,
+    "winter_ice_training": true,
+    "source": "freedive.ee avalik sisu: 'Open-Water Training Year-Round … throughout the year (including winter)'"
+  },
+  "months": [
+    { "month": "January",   "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "February",  "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "March",     "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "April",     "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "May",       "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "June",      "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "July",      "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "August",    "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "September", "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "October",   "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "November",  "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" },
+    { "month": "December",  "water_temp_c": null, "visibility_m": null, "ice": null, "daylight_h": null, "suitability": null, "fact_status": "needs_confirmation" }
+  ],
+  "waitlist": { "list_type": "estonia_seasons", "purpose": "seasons & conditions notifications" }
+}
