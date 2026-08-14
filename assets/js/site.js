@@ -19,31 +19,43 @@
     }
   }
 
-  /* Hero-video (§ jõudlus). Vaikimisi EI laadita ühtegi baiti: HTML-is on ainult
-     responsive still-pilt ja tühi <video data-hero-video>. Allikad lisatakse siin ja
-     ainult siis, kui kõik tingimused on täidetud:
-       - kasutaja ei ole palunud vähem liikumist (prefers-reduced-motion);
-       - brauser ei teata andmesäästu (Save-Data) ega 2G-ühendust;
-       - ekraan on lauaarvuti laiuses (mobiilis jääb pilt — see hoiab LCP kiire).
-     Ilma JS-ita jääb samuti pilt. Video hajub sisse alles siis, kui kaader on olemas. */
+  /* Hero-video (§ jõudlus). Video mängib KÕIGIS ekraanilaiustes, aga mitte LCP arvelt:
+       - HTML-is on ainult responsive still-pilt ja tühi <video data-hero-video>;
+       - allikad lisatakse alles pärast lehe laadimist (load + idle), nii et esimene
+         nähtav kaader on kerge AVIF-pilt, mitte video;
+       - kitsale ekraanile antakse väike variant (hero-mobile.*, ~0,1–0,2 MB),
+         laiale täisvariant;
+       - videot EI laadita üldse, kui kasutaja on palunud vähem liikumist või brauser
+         teatab andmesäästu või 2G-ühenduse.
+     Ilma JS-ita jääb pilt. Kui autoplay on keelatud (nt iOS energiasäästurežiim),
+     jääb samuti pilt — video hajub sisse alles siis, kui kaader on päriselt olemas. */
   var video = document.querySelector('video[data-hero-video]');
   if (video) {
     var conn = navigator.connection || navigator.webkitConnection || {};
     var thrifty = conn.saveData === true || /(^|\W)(slow-)?2g$/.test(conn.effectiveType || '');
-    var narrow = window.matchMedia('(max-width: 900px)').matches;
-    if (!reduced && !thrifty && !narrow) {
-      [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(function (pair) {
-        var url = video.dataset['src' + pair[0].charAt(0).toUpperCase() + pair[0].slice(1)];
-        if (!url) return;
-        var s = document.createElement('source');
-        s.src = url;
-        s.type = pair[1];
-        video.appendChild(s);
-      });
-      video.addEventListener('canplay', function () { video.classList.add('ready'); }, { once: true });
-      video.load();
-      var playing = video.play();
-      if (playing && playing.catch) playing.catch(function () { /* autoplay keelatud → jääb pilt */ });
+    if (!reduced && !thrifty) {
+      var small = window.matchMedia('(max-width: 900px)').matches;
+      var startVideo = function () {
+        [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(function (pair) {
+          var key = 'src' + pair[0].charAt(0).toUpperCase() + pair[0].slice(1);
+          var url = (small && video.dataset[key + 'Small']) || video.dataset[key];
+          if (!url) return;
+          var s = document.createElement('source');
+          s.src = url;
+          s.type = pair[1];
+          video.appendChild(s);
+        });
+        video.addEventListener('canplay', function () { video.classList.add('ready'); }, { once: true });
+        video.load();
+        var playing = video.play();
+        if (playing && playing.catch) playing.catch(function () { /* autoplay keelatud → jääb pilt */ });
+      };
+      var whenIdle = function () {
+        if (window.requestIdleCallback) window.requestIdleCallback(startVideo, { timeout: 1500 });
+        else setTimeout(startVideo, 200);
+      };
+      if (document.readyState === 'complete') whenIdle();
+      else window.addEventListener('load', whenIdle, { once: true });
     }
   }
 

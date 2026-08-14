@@ -48,6 +48,15 @@ jäävad ainult `window.mgEventQueue`'sse.
 
 ## 3. Cloudflare (audit P0/P1) — OWNER ACTION
 
+**Kohe pärast iga deploy'd: puhasta vahemälu.** Cloudflare hoiab staatilisi faile
+~4 tundi (`cache-control: max-age=14400`), seega vana `hero.mp4`, `robots.txt` või
+CSS serveeritakse ka siis, kui origin on juba uuendatud — see näeb välja nagu
+„muudatus ei jõudnud kohale" või „video ei tööta". Cloudflare → Caching →
+Configuration → **Purge Everything** (või üksikud URL-id).
+
+Kontroll: `curl -sSI https://meregrupp.ee/assets/hero.mp4 | grep -i content-length`
+peab andma uue faili suuruse, mitte vana.
+
 Täpsed reeglid, väärtused ja kontrollkäsud: **`docs/cloudflare-rules.md`**.
 
 - `/en/freediving/` → päris **301** (praegu 200 + meta refresh);
