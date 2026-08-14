@@ -19,12 +19,32 @@
     }
   }
 
-  /* Hero-video: hajub sisse alles siis, kui kaader on olemas. */
-  var video = document.querySelector('.hero-media video');
-  if (video && !reduced) {
-    var ready = function () { video.classList.add('ready'); };
-    if (video.readyState >= 2) ready();
-    else video.addEventListener('canplay', ready, { once: true });
+  /* Hero-video (§ jõudlus). Vaikimisi EI laadita ühtegi baiti: HTML-is on ainult
+     responsive still-pilt ja tühi <video data-hero-video>. Allikad lisatakse siin ja
+     ainult siis, kui kõik tingimused on täidetud:
+       - kasutaja ei ole palunud vähem liikumist (prefers-reduced-motion);
+       - brauser ei teata andmesäästu (Save-Data) ega 2G-ühendust;
+       - ekraan on lauaarvuti laiuses (mobiilis jääb pilt — see hoiab LCP kiire).
+     Ilma JS-ita jääb samuti pilt. Video hajub sisse alles siis, kui kaader on olemas. */
+  var video = document.querySelector('video[data-hero-video]');
+  if (video) {
+    var conn = navigator.connection || navigator.webkitConnection || {};
+    var thrifty = conn.saveData === true || /(^|\W)(slow-)?2g$/.test(conn.effectiveType || '');
+    var narrow = window.matchMedia('(max-width: 900px)').matches;
+    if (!reduced && !thrifty && !narrow) {
+      [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(function (pair) {
+        var url = video.dataset['src' + pair[0].charAt(0).toUpperCase() + pair[0].slice(1)];
+        if (!url) return;
+        var s = document.createElement('source');
+        s.src = url;
+        s.type = pair[1];
+        video.appendChild(s);
+      });
+      video.addEventListener('canplay', function () { video.classList.add('ready'); }, { once: true });
+      video.load();
+      var playing = video.play();
+      if (playing && playing.catch) playing.catch(function () { /* autoplay keelatud → jääb pilt */ });
+    }
   }
 
   /* Kerimisilmumised (max 12 px nihe, vt design-plan §7). */

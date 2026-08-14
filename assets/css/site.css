@@ -326,3 +326,36 @@ legend{font-family:var(--font-mono);font-size:var(--fs-mono);letter-spacing:.16e
   .routes{gap:.9rem}
   .btn{max-width:100%;white-space:normal;text-align:center}
 }
+/* Pikad domeeninimed (freediving.meregrupp.ee) ei tohi kitsast vaadet laiaks venitada. */
+.btn,.site-footer a,.route-card p{overflow-wrap:anywhere}
+
+/* ---------- nõusolekuriba (kuvatakse ainult, kui mõõtmise ID on seadistatud) ---------- */
+.consent-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem var(--gutter);
+  background:var(--abyss-1000);border-top:1px solid var(--line-dark);
+}
+.consent-bar p{font-size:var(--fs-small);color:var(--foam-100);max-width:var(--measure)}
+.consent-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.consent-bar .btn{min-height:44px;padding:.7rem 1.3rem}
+
+/* ---------- tsitaadid ---------- */
+/* Eestikeelne tsitaat saab eesti jutumärgid ka ingliskeelses vaates. */
+.member-quote q{quotes:"„" "“"}
+
+/* ---------- puutesihtmärgid (Lighthouse tap targets, ≥24×24 px ja 44 px kõrgus) ---------- */
+.site-nav a{display:inline-flex;align-items:center;min-height:44px}
+.lang-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 .25rem}
+.site-footer a{display:inline-block;padding-block:.2rem;min-height:28px}
+.footer-bottom a{display:inline-block;min-height:28px}
+.route-card .alt-link{display:inline-flex;align-items:center;min-height:32px}
+/* Sügavusriba punktid: nähtav punkt jääb 14 px, klikiala on 34×24 px läbipaistev kast. */
+.sections-nav ul{gap:.25rem}
+.sections-nav a{position:relative;width:34px;height:24px;border:0;border-radius:0;background:none}
+.sections-nav a::before{
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:14px;height:14px;border-radius:50%;border:1px solid var(--muted-blue);
+}
+.sections-nav a:hover,.sections-nav a.active{background:none}
+.sections-nav a:hover::before,.sections-nav a.active::before{border-color:var(--aqua-400);background:var(--aqua-700)}

@@ -24,8 +24,12 @@ väärtus EI ilmu avalikus UI-s faktina. Masinloetav olek: `data/offers.json` �
 - [ ] Iga kuu veetemperatuur, tüüpiline nähtavus, jää olek, valgustunnid (`data/seasons.json`)
 
 ## Inimesed ja pädevused
-- [ ] Taniel — pädevusnimetuste täpne loetelu ja sõnastus (praegu avaldatud kujul säilitatud)
-- [ ] Ilona — sama
+- [ ] Taniel — pädevusnimetuste täpne loetelu ja sõnastus (praegu avaldatud kujul säilitatud).
+      2026-08-14: „registreeritud med õde" → **„registreeritud õde"** (ametlik kutsenimetus);
+      EN vaates „registered nurse". Kinnitada, et kutse kehtib ja on avaldatav.
+- [ ] Ilona — sama. 2026-08-14: „muinasvrakile sukelduja" → **„muinasvraki sukelduja"**.
+      Ingliskeelne „Ancient Shipwreck Diver" vajab koolitaja ametliku nimetuse kontrolli
+      (audit: kontrollida enne avaldamist) — kui ametlik nimi erineb, parandada mõlemas keeles.
 - [x] AIDA: **jääb mainimata** (omaniku otsus 2026-08-13) — ei organisatsiooni staatust,
       ei isiklikku sertifikaati, ei alla-16 tabelit üheski vaates. Testid jõustavad
       (AIDA-stringi keeld mõlemas repos).
@@ -41,6 +45,18 @@ väärtus EI ilmu avalikus UI-s faktina. Masinloetav olek: `data/offers.json` �
 - [ ] Automaatvastus ja lubatav vastamisaeg ("2 tööpäeva" EI ole avaldatud)
 - [ ] Privaatsuspoliitika ja turundusnõusoleku tekst (lehte pole — link on jaluses märgitud
       "coming" olekus alles siis, kui omanik teksti annab; praegu linki ei näidata)
+
+## AI-robotid ja mõõtmine (lisatud auditi järel 2026-08-14)
+- [ ] **GPTBoti treeningupoliitika.** `robots.txt` lubab praegu GPTBoti. Nähtavus ChatGPT
+      Searchis tuleb OAI-SearchBotist (lubatud) — treening on eraldi otsus. Kui treeningut
+      ei soovita: `User-agent: GPTBot` → `Disallow: /`. Omanik otsustab.
+- [ ] **Cloudflare'i AI-blokk vs repo robots.txt** — kumb kiht jääb kehtima
+      (`docs/cloudflare-rules.md` p 3).
+- [ ] **GA4/GTM/Meta ID-d** — `assets/js/analytics-config.js` on tühi šabloon; ilma ID-ta
+      ei laadita ühtegi välist skripti ega kuvata nõusolekuriba.
+- [ ] **Vastuseaja standard.** `freedive.ee` lubab personaalset vastust kahe tööpäeva jooksul,
+      subdomeen ütleb, et vastuseaega ei lubata. Vaja üks standard kõikjale; meregrupp.ee
+      ei luba praegu ühtegi tähtaega.
 
 ## Identiteet
 - [x] Ametlik avalik e-post: **meregrupp@gmail.com** (omanik kinnitas 2026-08-13; teostatud kõikjal)
