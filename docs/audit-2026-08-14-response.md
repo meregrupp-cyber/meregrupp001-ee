@@ -22,7 +22,7 @@ Cloudflare, Facebook ja analüütikakontod on väljaspool — need on loetletud 
 |---|---|
 | `llms.txt` faktiomanik | lisatud kanooniliste faktiallikate tabel; parandatud vale väide, nagu suunaks `freedive.ee` broneerimiseks `meregrupp.ee`-le (õige siht on subdomeen); „booking" → „päring/inquiry" |
 | `robots.txt` AI-reeglid | lisatud selge `OAI-SearchBot: Allow` (ChatGPT Search nähtavus), `ChatGPT-User: Allow`; GPTBoti treeningureegel märgitud eraldi omaniku otsuseks; Cloudflare'i vastuolu kirjeldatud `docs/cloudflare-rules.md` p 3 |
-| mobiili LCP / hero | `hero.mp4` 7,7 MB → 0,60 MB, `hero.webm` 0,84 MB → 0,37 MB (heliriba maha, mõistlik bitikiirus). Video allikad lisab JS ainult siis, kui ei ole reduced-motion, Save-Data, 2G ega kitsas ekraan — mobiilis videot **ei laadita üldse** |
+| mobiili LCP / hero | `hero.mp4` 7,7 MB → 0,60 MB, `hero.webm` 0,84 MB → 0,37 MB (heliriba maha, mõistlik bitikiirus). Lisaks kerge mobiilivariant `hero-mobile.mp4` 0,23 MB / `hero-mobile.webm` 0,12 MB. Video mängib kõigis laiustes, aga allikad lisab JS alles **pärast lehe laadimist** (LCP jääb kergeks AVIF-pildiks); ära jäetakse reduced-motion, Save-Data ja 2G korral |
 | pildid | AVIF/WebP/JPEG variandid `assets/img/` (`srcset`/`sizes`, mõõdud paigas); logo 233 KB → 23 KB; hero-poster 450 KB → ~5 KB (AVIF 640) |
 | turbepäised | väärtused failis `_headers` + täpsed Cloudflare Transform Rule'id (`docs/cloudflare-rules.md`), CSP alustab Report-Only režiimis |
 | vana URL 301 | `docs/cloudflare-rules.md` p 1: täpne Redirect Rule + `curl -I` kontroll. Repo leht `en/freediving/` jääb varuteeks (GitHub Pages ei suuda 301-e) |
@@ -35,10 +35,23 @@ Mobiilivaate esimene laadimine (`/`, 390 px, tühi vahemälu, kohalik server):
 
 | | enne | pärast |
 |---|---:|---:|
-| kokku | **2168 KB** | **501 KB** |
-| hero-video | 821 KB (Chrome/WebM) või **7,7 MB** (iOS/MP4) | **0 KB** — mobiilis ei laadita |
-| hero-pilt | 450 KB (JPEG poster) | ~5 KB (AVIF 640) |
+| kokku | **2168 KB** | **624 KB** |
+| esimene nähtav kaader | 450 KB JPEG + video | ~5 KB AVIF (video tuleb hiljem) |
+| hero-video | 821 KB (Chrome/WebM) või **7,7 MB** (iOS/MP4) | 122 KB (WebM) / 230 KB (iOS MP4), laaditud pärast load'i |
 | logo | 233 KB × 2 | 23 KB × 2 |
+
+Lauaarvutis 886 KB (video 371 KB WebM / 618 KB MP4).
+
+**Video käitumine seadmeti** (kontrollitud `tests/e2e.mjs` ja seadmeprofiilidega):
+
+| seade | variant | tulemus |
+|---|---|---|
+| lauaarvuti 1440 px | `hero.webm` / `hero.mp4` | mängib |
+| sülearvuti 1024 px | täisvariant | mängib |
+| iPad (810 px) | `hero-mobile.*` | mängib |
+| iPhone 13 (390 px) | `hero-mobile.*` | mängib |
+| reduced-motion / Save-Data / 2G | — | videot ei laadita, jääb still-pilt |
+| ilma JS-ita | — | still-pilt |
 
 Pärast jäänud suurim plokk on fondid (368 KB) — see on eraldi järgmine samm, mitte
 auditi punkt.
@@ -54,9 +67,10 @@ node tests/e2e.mjs            # brauser: video laadimise tingimused, 320 px, H-t
                               # ilma JS-ita sisu (vajab playwright'i; muidu SKIP)
 ```
 
-Kõik kolm läbivad. E2E kinnitab: lauaarvutis video laaditakse, mobiilis ja
-reduced-motion režiimis mitte; 320 px vaates ei teki horisontaalset kerimist; ilma
-JavaScriptita on kolm rada, kontakt ja hero-pilt olemas.
+Kõik kolm läbivad. E2E kinnitab: video mängib nii lauaarvutis kui mobiilis, õige variant
+õigele laiusele, laadimine alles pärast `load`-sündmust; reduced-motion korral videot ei
+laadita; 320 px vaates ei teki horisontaalset kerimist; ilma JavaScriptita on kolm rada,
+kontakt ja hero-pilt olemas.
 
 ## Rollback
 

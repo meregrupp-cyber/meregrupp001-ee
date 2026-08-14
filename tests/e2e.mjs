@@ -5,7 +5,8 @@
    nii ei lõhu ta sõltuvusteta põhikontrolli (node tests/check.mjs).
 
    Mida kontrollitakse:
-     1. mobiilivaates EI laadita hero-videot (LCP kaitse), lauaarvutis laaditakse;
+     1. hero-video: mobiilile kerge variant, lauaarvutile täisvariant, mõlemal juhul
+        alles pärast lehe laadimist (LCP jääb still-pildiks) — ja video päriselt mängib;
      2. prefers-reduced-motion korral videot ei laadita üheski laiuses;
      3. horisontaalset kerimist ei teki 320 px laiuses;
      4. ilma JavaScriptita on põhisisu ja kontakt kättesaadavad;
@@ -61,22 +62,55 @@ async function videoRequests(opts, url = '/') {
   const ctx = await browser.newContext(opts);
   const page = await ctx.newPage();
   const hits = [];
-  page.on('request', (r) => { if (/hero\.(mp4|webm)/.test(r.url())) hits.push(r.url()); });
-  await page.goto(base + url, { waitUntil: 'networkidle' });
+  page.on('request', (r) => { if (/hero(-mobile)?\.(mp4|webm)/.test(r.url())) hits.push(r.url()); });
+  await page.goto(base + url, { waitUntil: 'load' });
+  /* video laaditakse teadlikult alles pärast load + idle — anna sellele aega */
+  await page.waitForTimeout(3000);
   await ctx.close();
   return hits;
 }
 
-/* 1–2. video laadimise tingimused */
+/* 1–2. video laadimise tingimused ja variandi valik */
 {
   const desktop = await videoRequests({ viewport: { width: 1440, height: 900 } });
-  desktop.length ? ok('lauaarvuti: hero-video laaditakse') : fail('lauaarvuti: hero-videot ei laaditud');
+  desktop.some((u) => /hero\.(webm|mp4)/.test(u)) && !desktop.some((u) => /hero-mobile/.test(u))
+    ? ok('lauaarvuti: laaditakse täisvariant hero.*')
+    : fail('lauaarvuti: vale variant või videot ei laaditud: ' + JSON.stringify(desktop));
 
   const mobile = await videoRequests({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
-  mobile.length === 0 ? ok('mobiil: hero-videot EI laadita (LCP kaitse)') : fail('mobiil: video laaditi ikkagi: ' + mobile[0]);
+  mobile.some((u) => /hero-mobile\.(webm|mp4)/.test(u)) && !mobile.some((u) => /\/hero\.(webm|mp4)/.test(u))
+    ? ok('mobiil: laaditakse kerge variant hero-mobile.*')
+    : fail('mobiil: vale variant või videot ei laaditud: ' + JSON.stringify(mobile));
+
+  const tablet = await videoRequests({ viewport: { width: 810, height: 1080 }, isMobile: true, hasTouch: true });
+  tablet.length ? ok('tahvel 810 px: video laaditakse') : fail('tahvel 810 px: videot ei laaditud');
 
   const reduced = await videoRequests({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
   reduced.length === 0 ? ok('reduced-motion: hero-videot ei laadita') : fail('reduced-motion: video laaditi');
+}
+
+/* 2b. video mängib päriselt ja pilt jääb LCP-ks (video tuleb alles pärast load'i) */
+for (const [label, opts] of [
+  ['lauaarvuti', { viewport: { width: 1440, height: 900 } }],
+  ['mobiil', { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true }]
+]) {
+  const ctx = await browser.newContext(opts);
+  const page = await ctx.newPage();
+  let videoBeforeLoad = false;
+  let loaded = false;
+  page.on('request', (r) => { if (/hero(-mobile)?\.(mp4|webm)/.test(r.url()) && !loaded) videoBeforeLoad = true; });
+  await page.goto(base + '/', { waitUntil: 'load' });
+  loaded = true;
+  await page.waitForTimeout(4000);
+  const v = await page.evaluate(() => {
+    const el = document.querySelector('video[data-hero-video]');
+    return el ? { t: el.currentTime, paused: el.paused, ready: el.classList.contains('ready'), err: el.error && el.error.code } : null;
+  });
+  v && v.t > 0 && !v.paused && v.ready
+    ? ok(`${label}: hero-video mängib (t=${v.t.toFixed(1)}s)`)
+    : fail(`${label}: video ei mängi — ${JSON.stringify(v)}`);
+  videoBeforeLoad ? fail(`${label}: video laaditi enne load-sündmust (LCP oht)`) : ok(`${label}: video laaditi alles pärast lehe laadimist`);
+  await ctx.close();
 }
 
 /* 3. 320 px ilma horisontaalse kerimiseta + 6. pealkirjastruktuur */

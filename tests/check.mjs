@@ -222,7 +222,7 @@ const fj = read('assets/js/forms.js');
 for (const file of ['index.html', 'en/index.html']) {
   const html = read(file);
   /<video[^>]*data-hero-video/.test(html) && !/<video[\s\S]{0,400}?<source/.test(html)
-    ? ok(`${file}: hero-video allikad lisab JS (mobiilis ei laadita)`)
+    ? ok(`${file}: hero-video allikad lisab JS (pärast lehe laadimist)`)
     : fail(`${file}: hero-video laadib allikaid ilma tingimusteta`);
   /<picture>[\s\S]*?type="image\/avif"[\s\S]*?type="image\/webp"/.test(html)
     ? ok(`${file}: AVIF/WebP variandid olemas`) : fail(`${file}: responsive pildivariandid puuduvad`);
@@ -251,10 +251,26 @@ for (const [file, base] of [['index.html', ''], ['en/index.html', 'en'], ['freed
 /* --- hero-video suurus: audit mõõtis 7,7 MB MP4 (mobiili LCP 6,7 s) --- */
 {
   const { statSync } = await import('node:fs');
-  const mp4 = statSync(join(root, 'assets/hero.mp4')).size;
-  mp4 < 1.5 * 1024 * 1024
-    ? ok(`assets/hero.mp4: ${(mp4 / 1024 / 1024).toFixed(2)} MB (< 1,5 MB piir)`)
-    : fail(`assets/hero.mp4: ${(mp4 / 1024 / 1024).toFixed(2)} MB — liiga suur`);
+  const limits = {
+    'assets/hero.mp4': 1.5 * 1024 * 1024,
+    'assets/hero.webm': 1.0 * 1024 * 1024,
+    'assets/hero-mobile.mp4': 400 * 1024,
+    'assets/hero-mobile.webm': 300 * 1024
+  };
+  for (const [f, limit] of Object.entries(limits)) {
+    const size = statSync(join(root, f)).size;
+    size < limit
+      ? ok(`${f}: ${(size / 1024).toFixed(0)} KB (piir ${(limit / 1024).toFixed(0)} KB)`)
+      : fail(`${f}: ${(size / 1024).toFixed(0)} KB — üle piiri ${(limit / 1024).toFixed(0)} KB`);
+  }
+}
+
+/* --- hero-video: mobiilile eraldi kerge variant --- */
+for (const file of ['index.html', 'en/index.html']) {
+  const html = read(file);
+  /data-src-mp4-small="[^"]*hero-mobile\.mp4"/.test(html) && /data-src-webm-small="[^"]*hero-mobile\.webm"/.test(html)
+    ? ok(`${file}: kitsale ekraanile eraldi kerge videovariant`)
+    : fail(`${file}: mobiili videovariant puudub`);
 }
 
 /* --- offers.json väravad --- */
