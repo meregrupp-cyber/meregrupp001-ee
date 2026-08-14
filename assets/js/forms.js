@@ -1,46 +1,81 @@
-/* Vormikiht (§12). AUS OLEK: sellel saidil ei ole vormide backend'i (GitHub Pages,
-   staatiline). Seetõttu:
+/* Meregrupp — vormikiht (§12).
 
-   1. MG_FORM_ENDPOINT on dokumenteeritud adapter: kui omanik seadistab päris endpoint'i
-      (CRM/e-post/serverless), määrata allpool URL — vorm hakkab POST-ima sinna ja
-      suunab õnnestumisel raja tänulehele (data-thanks atribuut), et konversioon oleks
-      mõõdetav raja kaupa.
-   2. Kuni endpoint'i EI OLE: submit EI teeskle õnnestumist. Valideerimise järel
-      koostatakse kasutaja vastustest struktureeritud e-kiri ja avatakse tema enda
-      meiliklient (mailto) — sama kanal, mida praegune sait kasutab. Kasutajale
-      öeldakse ausalt, et kiri saadetakse tema meilikliendist.
-   3. Ilma JS-ita: <form action="mailto:…" method="post" enctype="text/plain"> avab
-      meilikliendi väljade sisuga või ei tee midagi — kunagi ei näita valet edu.
+   REEGEL: vorm kas jõuab päris vastuvõtusüsteemi või ütleb ausalt, et ei jõua.
+   Vahepealset "avame sinu meilikliendis mustandi ja loeme selle liidiks" varianti EI OLE —
+   just see tekitas analüütikasse valeliide (audit 2026-08-14, P0).
 
-   Rämpspostikaitse: honeypot-väli (.hp-field) + ajakontroll (min 4 s täitmisaega).
-   PII ei lähe analüütikasse — mgTrack filtreerib (analytics.js). */
+   Kaks olekut:
+
+   A) ENDPOINT ON SEADISTATUD (form[data-endpoint] või window.MG_FORMS_CONFIG.endpoint)
+      - valideerimine, veakokkuvõte ja fookus esimesele veale;
+      - honeypot (.hp-field) + ajalõks (alla 4 s täidetud vorm = robot);
+      - POST fetch'iga, nupp lukus saatmise ajaks;
+      - submit_lead AINULT pärast HTTP 2xx vastust;
+      - õnnestumisel raja tänuleht (data-thanks) või data-msg-ok;
+      - vea korral veateade koos otsekontaktiga — mitte vaikne kadu.
+
+   B) ENDPOINT PUUDUB (või action on mailto:)
+      - vorm EI teeskle saatmist: submit blokeeritakse ja kuvatakse nähtav teade koos
+        otsese kontaktivõimalusega (data-fallback-html või data-mailto);
+      - ühtegi konversioonisündmust ei saadeta.
+
+   Endpoint'i nõuded on kirjas docs/owner-actions.md (serveripoolne valideerimine,
+   rate limit, CORS, struktureeritud liidikirje, automaatkinnitus). Selle faili ülesanne
+   on ainult brauseripool. */
 (function () {
   'use strict';
-  var MG_FORM_ENDPOINT = ''; /* ← omanik: päris endpoint'i URL siia (vt docs/needs-confirmation.md) */
+
+  var CONFIG = window.MG_FORMS_CONFIG || {};
+  var MIN_FILL_MS = 4000;
 
   document.querySelectorAll('form[data-offer]').forEach(function (form) {
-    var startedAt = 0;
     var offer = form.dataset.offer;
     var lang = document.documentElement.lang || 'en';
+    var endpoint = form.dataset.endpoint || CONFIG.endpoint || '';
+    var action = form.getAttribute('action') || '';
+    var status = form.querySelector('.form-status');
+    var startedAt = 0;
+
+    if (/^mailto:/i.test(action)) {
+      /* mailto-action jätaks JS-ita kasutajale poolik-mustandi ja meile mõõtmata liidi */
+      form.removeAttribute('action');
+      if (window.console) console.error('[mg] form[data-offer="' + offer + '"]: mailto action eemaldatud — vaja on päris endpoint.');
+      endpoint = form.dataset.endpoint || CONFIG.endpoint || '';
+    }
 
     form.addEventListener('focusin', function () {
-      if (!startedAt) {
-        startedAt = Date.now();
-        window.mgTrack && window.mgTrack('start_form', { offer: offer, language: lang });
-      }
+      if (startedAt) return;
+      startedAt = Date.now();
+      window.mgTrack && window.mgTrack('start_form', { offer: offer, language: lang });
     }, { once: true });
 
+    /* --- B: endpoint puudub → aus teade, mitte vale edu --- */
+    if (!endpoint) {
+      form.setAttribute('data-mg-state', 'no-endpoint');
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        if (!status) return;
+        status.className = 'form-status active err';
+        status.innerHTML = form.dataset.fallbackHtml ||
+          (lang.indexOf('et') === 0
+            ? 'Vormi vastuvõtt ei ole veel ühendatud, seega me ei saa seda päringut kätte. Kirjuta palun otse: <a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a>.'
+            : 'The form endpoint is not connected yet, so this request would not reach us. Please write directly: <a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a>.');
+        status.setAttribute('tabindex', '-1');
+        status.focus();
+      });
+      return;
+    }
+
+    /* --- A: päris endpoint --- */
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
 
-      /* honeypot: täidetud peidetud väli = robot, vaikne drop */
       var hp = form.querySelector('.hp-field input');
-      if (hp && hp.value) return;
+      if (hp && hp.value) return; /* robot — vaikne drop */
 
-      /* valideerimine + veakokkuvõte + fookus esimesele veale */
       var summary = form.querySelector('.form-error-summary');
       var errors = [];
-      form.querySelectorAll('.field.invalid').forEach(function (f) { f.classList.remove('invalid'); });
+      form.querySelectorAll('.field.invalid, .check.invalid').forEach(function (f) { f.classList.remove('invalid'); });
       form.querySelectorAll('[required]').forEach(function (input) {
         var ok = input.type === 'checkbox' ? input.checked : input.value.trim() !== '';
         if (ok && input.type === 'email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
@@ -67,57 +102,60 @@
       }
       if (summary) summary.classList.remove('active');
 
-      var status = form.querySelector('.form-status');
+      /* ajalõks alles pärast valideerimist: päris kasutajat ei tohi vaikselt dropp'ida */
+      if (startedAt && Date.now() - startedAt < MIN_FILL_MS) return;
+
       var data = new FormData(form);
       var utm = (window.mgGetUtm && window.mgGetUtm()) || {};
       Object.keys(utm).forEach(function (k) { data.append(k, utm[k]); });
+      data.append('offer', offer);
+      data.append('language', lang);
+      data.append('page_url', location.href.split('#')[0]);
+      data.append('consent_version', form.dataset.consentVersion || '');
+
+      var btn = form.querySelector('[type="submit"]');
+      if (btn && btn.disabled) return; /* topeltsubmit */
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = '…'; }
+      if (status) { status.className = 'form-status active'; status.textContent = form.dataset.msgSending || (lang.indexOf('et') === 0 ? 'Saadan…' : 'Sending…'); }
 
       var groupSize = data.get('group_size') || '';
-      window.mgTrack && window.mgTrack('submit_lead', {
-        offer: offer,
-        group_size_bucket: groupSize === '' ? 'unknown' : (parseInt(groupSize, 10) > 2 ? '3plus' : groupSize),
-        horizon: data.get('travel_window') ? 'future' : 'near',
-        source: utm.utm_source || 'direct'
-      });
 
-      if (MG_FORM_ENDPOINT) {
-        /* ajakontroll ainult päris endpoint'i vastu: alla 4 s täidetud vorm = robot.
-           Valideerimine ja veateated käivad enne — päris kasutajat ei tohi vaikselt dropp'ida. */
-        if (startedAt && Date.now() - startedAt < 4000) return;
-        /* päris endpoint: POST + tänuleht */
-        var btn = form.querySelector('[type="submit"]');
-        if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = '…'; }
-        fetch(MG_FORM_ENDPOINT, { method: 'POST', body: data })
-          .then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            var thanks = form.dataset.thanks;
-            if (thanks) location.assign(thanks);
-            else if (status) { status.className = 'form-status active ok'; status.textContent = form.dataset.msgOk || 'Sent.'; }
-          })
-          .catch(function () {
-            if (status) { status.className = 'form-status active err'; status.textContent = form.dataset.msgErr || 'Sending failed — please e-mail us directly.'; }
-          })
-          .then(function () { if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; } });
-        return;
-      }
+      fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
 
-      /* endpoint puudub: aus mailto-koostamine kasutaja meilikliendis */
-      var lines = [];
-      form.querySelectorAll('input, select, textarea').forEach(function (el) {
-        if (!el.name || el.closest('.hp-field')) return;
-        if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) return;
-        lines.push(el.name + ': ' + el.value);
-      });
-      Object.keys(utm).forEach(function (k) { lines.push(k + ': ' + utm[k]); });
-      var to = form.dataset.mailto;
-      var subject = form.dataset.subject || ('Inquiry — ' + offer);
-      var href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-      if (status) {
-        status.className = 'form-status active ok';
-        status.innerHTML = (form.dataset.msgMailto ||
-          'Your e-mail app will open with this request pre-filled — press send there to reach us.');
-      }
-      location.href = href;
+          /* Konversioon läheb mõõtmisse ALLES siin — 2xx järel. PII ei lähe kaasa. */
+          window.mgTrack && window.mgTrack('submit_lead', {
+            offer: offer,
+            language: lang,
+            group_size_bucket: groupSize === '' ? 'unknown' : (parseInt(groupSize, 10) > 2 ? '3plus' : String(groupSize)),
+            horizon: data.get('travel_window') ? 'future' : 'near'
+          }, { dedupeKey: offer + '|' + (data.get('travel_window') || '') + '|' + groupSize });
+
+          var thanks = form.dataset.thanks;
+          if (thanks) { location.assign(thanks); return; }
+          if (status) {
+            status.className = 'form-status active ok';
+            status.textContent = form.dataset.msgOk || (lang.indexOf('et') === 0 ? 'Päring on meil käes.' : 'We have your request.');
+            status.setAttribute('tabindex', '-1');
+            status.focus();
+          }
+          form.reset();
+        })
+        .catch(function () {
+          if (status) {
+            status.className = 'form-status active err';
+            status.innerHTML = form.dataset.msgErr ||
+              (lang.indexOf('et') === 0
+                ? 'Saatmine ebaõnnestus. Proovi uuesti või kirjuta otse: <a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a>.'
+                : 'Sending failed. Please try again or write directly: <a href="mailto:meregrupp@gmail.com">meregrupp@gmail.com</a>.');
+            status.setAttribute('tabindex', '-1');
+            status.focus();
+          }
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; }
+        });
     });
   });
 })();

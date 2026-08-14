@@ -1,0 +1,15 @@
+{
+  "name": "meregrupp-ee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "meregrupp.ee — Allvee Akadeemia / Aquatic Academy portaal (staatiline sait) + freedive.ee värava staging",
+  "scripts": {
+    "test": "node tests/check.mjs && node tests/analytics.test.mjs",
+    "test:e2e": "node tests/e2e.mjs",
+    "test:all": "npm test && npm run test:e2e",
+    "serve": "node -e \"const{createServer}=require('http'),{readFile,stat}=require('fs/promises'),{join,extname}=require('path');const T={'.html':'text/html;charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.avif':'image/avif','.mp4':'video/mp4','.webm':'video/webm','.woff2':'font/woff2','.txt':'text/plain','.xml':'application/xml'};createServer(async(q,s)=>{let p=decodeURIComponent(q.url.split('?')[0]);if(p.endsWith('/'))p+='index.html';const f=join(process.cwd(),p);try{await stat(f);s.writeHead(200,{'Content-Type':T[extname(f)]||'application/octet-stream'});s.end(await readFile(f))}catch{s.writeHead(404);s.end(await readFile(join(process.cwd(),'404.html')).catch(()=>'404'))}}).listen(8080,()=>console.log('http://localhost:8080'))\""
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

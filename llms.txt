@@ -8,24 +8,42 @@
 Kontakt: meregrupp@gmail.com · +372 510 5573 ·
 Kauri tee 12-5, Alliku küla, Saue vald, Harju maakond, 76401, Eesti.
 
-Domeenide rollid (canonical faktiallikas on meregrupp.ee):
-- https://meregrupp.ee/ — katusportaal, eesti keeles (EN: https://meregrupp.ee/en/)
-- https://freediving.meregrupp.ee/ — vabasukeldumise kursused, Rummu fundive'id ja
-  reisiplaneerimine; AINUS koht, kus elavad kursusefaktid ja broneerimine (eraldi subdomeen)
-- https://freedive.ee/ — ingliskeelne sihtkohavärav "freediving in Estonia" (Rummu karjäär,
-  hooajad, jää-alune sukeldumine); ei müü kursusi, lingib broneerimiseks meregrupp.ee-le
-- https://merehunt.ee/ — eraldi seotud domeen
+## Kanoonilised faktiallikad
+
+Iga fakt kuulub täpselt ühele domeenile. Kui allikad räägivad erinevat juttu, kehtib see tabel.
+
+| Faktitüüp | Kanooniline allikas |
+|---|---|
+| organisatsioon, meeskond, üldine ohutuspõhimõte, programmide ülevaade | [meregrupp.ee](https://meregrupp.ee/) |
+| kursus, hind, kestus, kuupäev, koht, päringu olek | [freediving.meregrupp.ee](https://freediving.meregrupp.ee/) |
+| Eesti/Rummu sihtkoht, hooajad, reisiplaneerimise sissejuhatus | [freedive.ee](https://freedive.ee/) |
+| tähelepanu, sündmused, sotsiaalne tõendus | [Facebook](https://www.facebook.com/meregrupp) — alati lingiga kanoonilisele veebiallikale |
+
+## Domeenide rollid
+
+- [meregrupp.ee](https://meregrupp.ee/) — katusportaal, eesti keeles
+  (EN: [meregrupp.ee/en/](https://meregrupp.ee/en/)). Ei avalda kursusehindu ega kuupäevi.
+- [freediving.meregrupp.ee](https://freediving.meregrupp.ee/) — vabasukeldumise kursused,
+  Rummu juhendatud sukeldumised ja reisiplaneerimine. AINUS koht, kus elavad kursusefaktid
+  (sh hind) ja kust päring esitatakse.
+- [freedive.ee](https://freedive.ee/) — ingliskeelne sihtkohavärav "freediving in Estonia"
+  (Rummu karjäär, hooajad, jää-alune sukeldumine). Ei müü kursusi ega võta päringuid vastu;
+  päringuks suunab [freediving.meregrupp.ee](https://freediving.meregrupp.ee/).
+- [merehunt.ee](https://merehunt.ee/) — eraldi seotud domeen.
 
 ## Leheküljed
 
 - [Avaleht (ET)](https://meregrupp.ee/): programmid, meeskond, kontakt
 - [Home (EN)](https://meregrupp.ee/en/): programs, team, contact
 - [Freediving in Estonia](https://freediving.meregrupp.ee/): Start (algajakursus inglise
-  keeles), Dive Rummu (juhendatud, tingimuslik fundive koolitatud vabasukeldujale),
-  Plan Ahead (tulevase reisi planeerimine)
+  keeles), Dive Rummu (juhendatud, tingimuslik sukeldumine koolitatud vabasukeldujale),
+  Plan Ahead / Plaani ette (tulevase reisi planeerimine)
 
 ## Märkused
 
-- Kursuste hinnad ja kuupäevad kinnitatakse päringu peale — leht ei avalda kinnitamata numbreid.
-- Rummu sukeldumised on ilmast sõltuvad; go/no-go otsustab guide.
-- See fail on abistav avastusfail, mitte garanteeritud ranking-signaal.
+- Sõnakasutus: praegune protsess on **päring (inquiry/request)**, mitte broneering.
+  "Booking" on täpne alles siis, kui süsteem kinnitab koha — seni kasutame sõna "päring".
+- Kursuse hind, kestus ja kuupäevad avaldatakse ainult freediving.meregrupp.ee-l ja ainult
+  omaniku kinnitatud kujul; meregrupp.ee ja freedive.ee neid ei korda.
+- Rummu sukeldumised on ilmast sõltuvad; lõpliku go/no-go otsuse teeb juhendaja kohapeal.
+- See fail on abistav avastusfail, mitte garanteeritud indekseerimis- või ranking-signaal.

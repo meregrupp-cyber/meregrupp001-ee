@@ -140,6 +140,122 @@ new Set(h1texts).size === h1texts.length ? ok('H1-d on unikaalsed kõigis vaadet
 /* --- analytics: ühtegi konto-ID-d pole kõvakodeeritud --- */
 const aj = read('assets/js/analytics.js');
 /G-[A-Z0-9]{6,}|GTM-[A-Z0-9]+|UA-\d+/.test(aj) ? fail('analytics.js: kõvakodeeritud konto ID') : ok('analytics.js: ID-sid pole');
+const acfg = read('assets/js/analytics-config.js');
+/* päris ID sisaldab numbrit; kommentaari näidised (G-XXXXXXX) ei ole ID-d */
+/G-(?=[A-Z0-9]*\d)[A-Z0-9]{6,}|GTM-(?=[A-Z0-9]*\d)[A-Z0-9]{4,}|UA-\d+|\d{15,}/.test(acfg)
+  ? fail('analytics-config.js: production-ID on commit\'itud — see fail peab jääma tühjaks šabloonideks')
+  : ok('analytics-config.js: tühi šabloon, ID-sid pole');
+
+/* --- audit 2026-08-14 P0: avalikus sisus ei ole tootmismärkmeid --- */
+const PRODUCTION_NOTES = [
+  /program count comes from/i,
+  /programmide arv tuleb/i,
+  /photo slot/i,
+  /missing-inputs/i,
+  /TODO|FIXME|LOREM IPSUM/i
+];
+for (const file of ['index.html', 'en/index.html', 'freedive-ee/index.html', '404.html']) {
+  const html = read(file);
+  const hit = PRODUCTION_NOTES.find((re) => re.test(html));
+  hit ? fail(`${file}: avalik tootmismärkus (${hit})`) : ok(`${file}: tootmismärkmeid pole`);
+}
+
+/* --- audit P0: keeleparandused ei tohi tagasi tulla --- */
+const BANNED = [
+  ['index.html', /buddy-põhimõte/i, 'buddy-põhimõte → paarilise põhimõte'],
+  ['index.html', /med õde/i, '„registreeritud med õde" → „registreeritud õde"'],
+  ['index.html', /Explore Rummu|>Plan Ahead</, 'ET vaates tõlkimata CTA'],
+  ['en/index.html', /theory room/i, '„in the pool and theory room"'],
+  ['en/index.html', /paths through the depth/i, '„08 paths through the depth"']
+];
+for (const [file, re, label] of BANNED) {
+  re.test(read(file)) ? fail(`${file}: ${label}`) : ok(`${file}: parandatud — ${label}`);
+}
+
+/* --- audit P0: vormikiht ei tohi mailto't edukaks lugeda --- */
+const fj = read('assets/js/forms.js');
+/location\.href\s*=\s*href/.test(fj) || /'mailto:'\s*\+/.test(fj)
+  ? fail('forms.js: mailto-submit on tagasi — submit_lead tekiks ilma päris saatmiseta')
+  : ok('forms.js: mailto-teesklust ei ole');
+/MG_FORM_ENDPOINT/.test(fj)
+  ? fail('forms.js: tühi MG_FORM_ENDPOINT konstant (audit P0)')
+  : ok('forms.js: endpoint tuleb konfist/data-endpoint\'ist');
+/r\.ok/.test(fj) && fj.indexOf("mgTrack('submit_lead'") > fj.indexOf('if (!r.ok)')
+  ? ok('forms.js: submit_lead käivitub alles 2xx järel')
+  : fail('forms.js: submit_lead ei ole 2xx taga');
+
+/* --- audit P1: robots.txt AI-reeglid on üheselt mõistetavad --- */
+{
+  const robots = read('robots.txt');
+  const agents = [...robots.matchAll(/^User-agent:\s*(\S+)/gim)].map((m) => m[1]);
+  const dupes = agents.filter((a, i) => agents.indexOf(a) !== i);
+  dupes.length ? fail(`robots.txt: korduv User-agent (${dupes.join(', ')})`) : ok('robots.txt: iga User-agent üks kord');
+  /User-agent:\s*OAI-SearchBot\s*\nAllow:\s*\//i.test(robots)
+    ? ok('robots.txt: OAI-SearchBot lubatud (ChatGPT Search nähtavus)')
+    : fail('robots.txt: OAI-SearchBot reegel puudub');
+  /User-agent:\s*ChatGPT-User\s*\nAllow:\s*\//i.test(robots)
+    ? ok('robots.txt: ChatGPT-User lubatud') : fail('robots.txt: ChatGPT-User reegel puudub');
+  robots.includes('Sitemap: https://meregrupp.ee/sitemap.xml') ? ok('robots.txt: sitemap viidatud') : fail('robots.txt: sitemap puudub');
+}
+
+/* --- audit P1: llms.txt räägib päris faktiomanikust --- */
+{
+  const llms = read('llms.txt');
+  /freedive\.ee[^\n]*(lingib )?broneerimiseks meregrupp\.ee/i.test(llms)
+    ? fail('llms.txt: väidab, et freedive.ee suunab broneerimiseks meregrupp.ee-le')
+    : ok('llms.txt: freedive.ee suunab päringuks subdomeenile');
+  llms.includes('freediving.meregrupp.ee') && /Kanoonilised faktiallikad/.test(llms)
+    ? ok('llms.txt: faktiomanike tabel olemas') : fail('llms.txt: faktiomanike tabel puudub');
+}
+
+/* --- audit: turbepäiste väärtused elavad versioonihalduses --- */
+{
+  const h = read('_headers');
+  for (const key of ['Strict-Transport-Security', 'X-Content-Type-Options', 'Referrer-Policy',
+    'Permissions-Policy', 'Content-Security-Policy-Report-Only']) {
+    h.includes(key) ? ok(`_headers: ${key}`) : fail(`_headers: ${key} puudub`);
+  }
+  h.includes('immutable') ? ok('_headers: versioonitud varadele immutable-vahemälu') : fail('_headers: immutable-vahemälu puudub');
+}
+
+/* --- jõudlus: hero-video ei laadi enne JS-i otsust; pildid on responsive --- */
+for (const file of ['index.html', 'en/index.html']) {
+  const html = read(file);
+  /<video[^>]*data-hero-video/.test(html) && !/<video[\s\S]{0,400}?<source/.test(html)
+    ? ok(`${file}: hero-video allikad lisab JS (mobiilis ei laadita)`)
+    : fail(`${file}: hero-video laadib allikaid ilma tingimusteta`);
+  /<picture>[\s\S]*?type="image\/avif"[\s\S]*?type="image\/webp"/.test(html)
+    ? ok(`${file}: AVIF/WebP variandid olemas`) : fail(`${file}: responsive pildivariandid puuduvad`);
+  const imgs = [...html.matchAll(/<img[^>]*\ssrcset="([^"]+)"/g)].length;
+  imgs >= 5 ? ok(`${file}: ${imgs} pilti srcset'iga`) : fail(`${file}: ainult ${imgs} pilti srcset'iga`);
+}
+
+/* --- kõik viidatud pildifailid on olemas (srcset + src) --- */
+for (const [file, base] of [['index.html', ''], ['en/index.html', 'en'], ['freedive-ee/index.html', 'freedive-ee']]) {
+  const html = read(file);
+  const refs = new Set();
+  for (const m of html.matchAll(/\s(?:src|srcset)="([^"]+)"/g)) {
+    for (const part of m[1].split(',')) {
+      const url = part.trim().split(/\s+/)[0];
+      if (url && !/^(https?:|data:)/.test(url)) refs.add(url);
+    }
+  }
+  let missing = 0;
+  for (const url of refs) {
+    const target = url.startsWith('/') ? join(root, url) : join(root, base, url);
+    if (!existsSync(target)) { fail(`${file}: puuduv vara ${url}`); missing++; }
+  }
+  if (!missing) ok(`${file}: kõik ${refs.size} viidatud vara on olemas`);
+}
+
+/* --- hero-video suurus: audit mõõtis 7,7 MB MP4 (mobiili LCP 6,7 s) --- */
+{
+  const { statSync } = await import('node:fs');
+  const mp4 = statSync(join(root, 'assets/hero.mp4')).size;
+  mp4 < 1.5 * 1024 * 1024
+    ? ok(`assets/hero.mp4: ${(mp4 / 1024 / 1024).toFixed(2)} MB (< 1,5 MB piir)`)
+    : fail(`assets/hero.mp4: ${(mp4 / 1024 / 1024).toFixed(2)} MB — liiga suur`);
+}
 
 /* --- offers.json väravad --- */
 for (const r of offers.routes) {

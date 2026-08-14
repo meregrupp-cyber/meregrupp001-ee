@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+
+# Kohalik mõõtmise seadistus, kui omanik hoiab päris ID-sid repost väljas.
+# Vaikimisi on repos tühi šabloon assets/js/analytics-config.js — vt docs/owner-actions.md.
+assets/js/analytics-config.local.js

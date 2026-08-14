@@ -1,0 +1,38 @@
+# Turbepealkirjad (audit 2026-08-14, "Tehniline hügieen ja turve").
+#
+# TÄHELEPANU — kus see fail päriselt mõjub:
+#   * Cloudflare Pages / Netlify origin: see fail rakendub nii nagu on.
+#   * GitHub Pages origin (praegune seadistus, vt CNAME): GitHub Pages EI loe seda faili.
+#     Sel juhul on ainus töötav koht Cloudflare'i Response Header Transform Rule —
+#     täpsed reeglid ja väärtused on docs/cloudflare-rules.md.
+# Fail on siin selleks, et päiste sisu elaks versioonihalduses ühes kohas ja liiguks
+# origin'i vahetusel kaasa. Ta EI asenda Cloudflare'i seadistust.
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), interest-cohort=()
+  X-Frame-Options: DENY
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.facebook.com; font-src 'self'; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; form-action 'self'; upgrade-insecure-requests
+
+# Versioonitud variandid (assets/img/<nimi>-<laius>.<ext>) on sisu poolest muutumatud.
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Versioonimata varad: lühike vahemälu + revalideerimine, et parandus jõuaks kohale
+# ilma kasutaja kõva värskenduseta.
+/assets/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/assets/*.mp4
+  Cache-Control: public, max-age=86400
+
+/assets/*.webm
+  Cache-Control: public, max-age=86400

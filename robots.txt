@@ -1,12 +1,27 @@
+# meregrupp.ee — robots.txt
+# NB! Cloudflare võib serveerida oma hallatud robots-plokki SELLE faili ees või järel.
+# Kui mõlemad kihid on aktiivsed, tekivad vastuolulised reeglid (audit 2026-08-14, P1).
+# Vastuolu lahendatakse Cloudflare'i seadistuses, mitte viimase ploki ülekirjutuse lootuses —
+# vt docs/owner-actions.md → "Cloudflare: AI-robotite plokk".
+
 User-agent: *
 Allow: /
 
-User-agent: GPTBot
+# --- OpenAI robotid on kolm eri asja (developers.openai.com/api/docs/bots) ---
+# OAI-SearchBot = nähtavus ChatGPT Searchis. Seda me tahame.
+User-agent: OAI-SearchBot
 Allow: /
 
+# ChatGPT-User = kasutaja algatatud päring (keegi küsib ChatGPT-lt meie kohta).
 User-agent: ChatGPT-User
 Allow: /
 
+# GPTBot = treeningukorje. See on eraldi poliitiline otsus, mitte nähtavuse küsimus.
+# Praegune olek: lubatud. Omanik kinnitab või muudab (docs/needs-confirmation.md).
+User-agent: GPTBot
+Allow: /
+
+# --- muud AI-robotid: sama loogika, nähtavus lubatud ---
 User-agent: Google-Extended
 Allow: /
 

@@ -15,6 +15,8 @@ kursusesisu asendatakse — muidu kaotavad kursusepäringud sihtkoha.
    production'i ei tohi noindex kaasa tulla).
 3. Asenda `../assets/...` viited freedive.ee omadega:
    - CSS/JS/fondid: kopeeri `assets/css/`, `assets/js/`, `assets/fonts/` kaustad kaasa
+     (sh `assets/js/analytics-config.js` — tühi šabloon; ID-d täidab omanik, vt
+     `docs/owner-actions.md`. Ilma failita ei laadi leht ühtegi mõõtmisskripti.)
      (või viita absoluutselt `https://meregrupp.ee/assets/...` — NB: siis sõltub värav
      meregrupp.ee kättesaadavusest; kopeerimine on eelistatud).
    - Fotod: asenda asset-slot'id (hero, Rummu galerii, jää) freedive.ee `media/` päris

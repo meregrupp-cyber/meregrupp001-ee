@@ -16,8 +16,8 @@
 <link rel="canonical" href="https://meregrupp.ee/en/" />
 
 <!-- ============ FAVICON ============ -->
-<link rel="icon" type="image/png" href="../assets/mgakalogoo.png" />
-<link rel="apple-touch-icon" href="../assets/mgakalogoo.png" />
+<link rel="icon" type="image/png" href="../assets/img/mgakalogoo-104.png" />
+<link rel="apple-touch-icon" href="../assets/img/mgakalogoo-104.png" />
 
 <!-- ============ OPEN GRAPH ============ -->
 <meta property="og:type" content="website" />
@@ -114,7 +114,7 @@
 
 <header class="site-header">
   <a class="brand" href="./">
-    <img src="../assets/mgakalogoo.png" alt="Meregrupp Aquatic Academy logo" width="52" height="52" />
+    <img src="../assets/img/mgakalogoo-104.png" alt="Meregrupp Aquatic Academy logo" width="52" height="52" decoding="async" />
     <span class="brand-text">Meregrupp<small>Aquatic Academy</small></span>
   </a>
   <nav class="site-nav" aria-label="Main menu">
@@ -167,10 +167,15 @@
 <!-- 0 m — surface -->
 <section class="hero band" data-depth="0" aria-labelledby="hero-h1">
   <div class="hero-media">
-    <video muted loop playsinline autoplay preload="metadata" poster="../assets/hero-poster.jpg" tabindex="-1" aria-hidden="true">
-      <source src="../assets/hero.webm" type="video/webm" />
-      <source src="../assets/hero.mp4" type="video/mp4" />
-    </video>
+    <picture>
+      <source type="image/avif" srcset="../assets/img/hero-poster-640.avif 640w, ../assets/img/hero-poster-960.avif 960w, ../assets/img/hero-poster-1440.avif 1440w" sizes="100vw" />
+      <source type="image/webp" srcset="../assets/img/hero-poster-640.webp 640w, ../assets/img/hero-poster-960.webp 960w, ../assets/img/hero-poster-1440.webp 1440w" sizes="100vw" />
+      <img class="hero-still" src="../assets/img/hero-poster-1440.jpg" srcset="../assets/img/hero-poster-640.jpg 640w, ../assets/img/hero-poster-960.jpg 960w, ../assets/img/hero-poster-1440.jpg 1440w" sizes="100vw" width="1440" height="809" fetchpriority="high" decoding="async" alt="" />
+    </picture>
+    <!-- The video is loaded by site.js only: never under reduced-motion, Save-Data, a slow
+         connection or a narrow screen. Without JS the still image stays — no megabytes load. -->
+    <video muted loop playsinline autoplay preload="none" tabindex="-1" aria-hidden="true"
+           data-hero-video data-src-webm="../assets/hero.webm" data-src-mp4="../assets/hero.mp4"></video>
   </div>
   <p class="hero-reg">EHIS 2145600 · MTÜ Meregrupp<br />Tallinn, EE · <span>since 2018</span></p>
   <div class="inner">
@@ -204,7 +209,7 @@
         <p class="readiness">0 m · no experience needed</p>
         <h3>Start</h3>
         <p class="fit">I am new to freediving.</p>
-        <p>A calm first experience in the pool and theory room, taught in English, safety first.</p>
+        <p>A calm first experience in the pool and in theory sessions, taught in English, safety first.</p>
         <a class="btn" href="https://freediving.meregrupp.ee/#start">Book a start date</a>
         <a class="alt-link" href="https://freediving.meregrupp.ee/#start">Ask if this suits me →</a>
       </article>
@@ -243,14 +248,22 @@
         <p style="margin-top:1.4rem"><a class="btn btn-primary" href="https://freediving.meregrupp.ee/">See the freediving routes</a></p>
       </div>
       <figure class="figure-panel reveal">
-        <img src="../assets/freediver-depth-blue.jpg" loading="lazy" decoding="async" width="800" height="450" alt="Freediver descending into blue open water in Estonia" />
+        <picture>
+          <source type="image/avif" srcset="../assets/img/freediver-depth-blue-400.avif 400w, ../assets/img/freediver-depth-blue-800.avif 800w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <source type="image/webp" srcset="../assets/img/freediver-depth-blue-400.webp 400w, ../assets/img/freediver-depth-blue-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <img src="../assets/img/freediver-depth-blue-800.jpg" srcset="../assets/img/freediver-depth-blue-400.jpg 400w, ../assets/img/freediver-depth-blue-800.jpg 800w" sizes="(min-width: 900px) 46vw, 92vw" loading="lazy" decoding="async" width="800" height="450" alt="Freediver descending into blue open water in Estonia" />
+        </picture>
         <figcaption>Open water · year-round training</figcaption>
       </figure>
     </div>
 
     <div class="panel-grid" style="margin-top:3rem">
       <figure class="figure-panel reveal">
-        <img src="../assets/hero-underwater-squad.jpg" loading="lazy" decoding="async" width="800" height="450" alt="Group of freedivers underwater with an instructor" />
+        <picture>
+          <source type="image/avif" srcset="../assets/img/hero-underwater-squad-400.avif 400w, ../assets/img/hero-underwater-squad-800.avif 800w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <source type="image/webp" srcset="../assets/img/hero-underwater-squad-400.webp 400w, ../assets/img/hero-underwater-squad-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <img src="../assets/img/hero-underwater-squad-800.jpg" srcset="../assets/img/hero-underwater-squad-400.jpg 400w, ../assets/img/hero-underwater-squad-800.jpg 800w" sizes="(min-width: 900px) 46vw, 92vw" loading="lazy" decoding="async" width="800" height="450" alt="Group of freedivers underwater with an instructor" />
+        </picture>
         <figcaption>Rummu · guided experience</figcaption>
       </figure>
       <div>
@@ -284,7 +297,11 @@
         <p class="small muted" style="margin-top:.8rem">The list opens as an e-mail from your own mail app — there is no separate form yet.</p>
       </div>
       <figure class="figure-panel reveal">
-        <img src="../assets/mermaid-underwater-portrait.jpg" loading="lazy" decoding="async" width="1280" height="720" alt="Mermaid with a monofin underwater, Meregrupp underwater photo session" />
+        <picture>
+          <source type="image/avif" srcset="../assets/img/mermaid-underwater-portrait-640.avif 640w, ../assets/img/mermaid-underwater-portrait-1280.avif 1280w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <source type="image/webp" srcset="../assets/img/mermaid-underwater-portrait-640.webp 640w, ../assets/img/mermaid-underwater-portrait-1280.webp 1280w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <img src="../assets/img/mermaid-underwater-portrait-1280.jpg" srcset="../assets/img/mermaid-underwater-portrait-640.jpg 640w, ../assets/img/mermaid-underwater-portrait-1280.jpg 1280w" sizes="(min-width: 900px) 46vw, 92vw" loading="lazy" decoding="async" width="1280" height="720" alt="Mermaid with a monofin underwater, Meregrupp underwater photo session" />
+        </picture>
         <figcaption>Mermaids · technique and movement</figcaption>
       </figure>
     </div>
@@ -297,7 +314,7 @@
     <div class="eyebrow"><span>Aquatic Academy</span> <span class="depth-mark">— 12 m</span></div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
       <h2 id="pr-h2">Programs — from <em>first stroke</em> to combat dive</h2>
-      <p class="mono muted"><span data-program-count>08</span> paths through the depth</p>
+      <p class="mono muted"><span data-program-count>08</span> paths into the deep</p>
     </div>
     <div class="program-list" style="margin-top:2.2rem">
 
@@ -358,7 +375,7 @@
       </a>
 
     </div>
-    <p class="small muted" style="margin-top:1rem">The program count comes from this list — every row is a real program you can ask about by e-mail.</p>
+    <p class="small muted" style="margin-top:1rem">Every row is a real program you can ask about by e-mail.</p>
   </div>
 </section>
 
@@ -374,7 +391,11 @@
     <div class="members" style="margin-top:2.4rem">
       <article class="member reveal">
         <div class="member-photo">
-          <img src="../assets/taniel-direktor.jpg" loading="lazy" decoding="async" width="1024" height="683" alt="Taniel, head coach and Aquatic Academy director, Master Freediver" />
+          <picture>
+          <source type="image/avif" srcset="../assets/img/taniel-direktor-512.avif 512w, ../assets/img/taniel-direktor-1024.avif 1024w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <source type="image/webp" srcset="../assets/img/taniel-direktor-512.webp 512w, ../assets/img/taniel-direktor-1024.webp 1024w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <img src="../assets/img/taniel-direktor-1024.jpg" srcset="../assets/img/taniel-direktor-512.jpg 512w, ../assets/img/taniel-direktor-1024.jpg 1024w" sizes="(min-width: 900px) 46vw, 92vw" loading="lazy" decoding="async" width="1024" height="683" alt="Taniel, head coach and Aquatic Academy director, Master Freediver" />
+        </picture>
         </div>
         <div class="member-body">
           <p class="mono muted">→ 01 / Director</p>
@@ -384,12 +405,16 @@
           and uncompromising safety culture. Background: Combat Diver course (Maritime Defence
           League), Master Freediver, Public Safety Diver, OPITO BOSIET / HUET, registered nurse.
           Languages: Estonian, English.</p>
-          <p class="member-quote">"et see vesi ikka vajuks ja vajuks ja vajuks"<span>— manifesto</span></p>
+          <p class="member-quote"><q lang="et">et see vesi ikka vajuks ja vajuks ja vajuks</q><span>— manifesto, in Estonian: “let this water keep sinking, and sinking, and sinking”</span></p>
         </div>
       </article>
       <article class="member reveal">
         <div class="member-photo">
-          <img src="../assets/ilona_intruktor.jpg" loading="lazy" decoding="async" width="1024" height="622" alt="Ilona, freediving instructor and safety specialist at Meregrupp" />
+          <picture>
+          <source type="image/avif" srcset="../assets/img/ilona_intruktor-512.avif 512w, ../assets/img/ilona_intruktor-1024.avif 1024w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <source type="image/webp" srcset="../assets/img/ilona_intruktor-512.webp 512w, ../assets/img/ilona_intruktor-1024.webp 1024w" sizes="(min-width: 900px) 46vw, 92vw" />
+          <img src="../assets/img/ilona_intruktor-1024.jpg" srcset="../assets/img/ilona_intruktor-512.jpg 512w, ../assets/img/ilona_intruktor-1024.jpg 1024w" sizes="(min-width: 900px) 46vw, 92vw" loading="lazy" decoding="async" width="1024" height="622" alt="Ilona, freediving instructor and safety specialist at Meregrupp" />
+        </picture>
         </div>
         <div class="member-body">
           <p class="mono muted">→ 02 / Instructor</p>
@@ -470,6 +495,7 @@
   </div>
 </footer>
 
+<script src="../assets/js/analytics-config.js" defer></script>
 <script src="../assets/js/analytics.js" defer></script>
 <script src="../assets/js/site.js" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();});</script>
